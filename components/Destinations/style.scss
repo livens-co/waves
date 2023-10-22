@@ -1,0 +1,142 @@
+.findDestination {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  // padding: 6rem 0;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    line-height: 1.2;
+
+    h1 {
+      color: var(--secondaryColor);
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .searchDestinations {
+    display: flex;
+    gap: 1.5rem;
+
+    .searchBar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 20rem;
+      border: 1px solid var(--primaryColor);
+      border-radius: 2rem;
+      padding: 0.5rem 1.25rem;
+      
+
+      input {
+        font-size: 1rem;
+        color: var(--secondaryColor);
+        background-color: transparent;
+
+        &::placeholder {
+          color: var(--secondaryColor);
+        }
+      }
+
+      svg {
+        font-size: 1.5rem;
+        color: var(--primaryColor);
+      }
+    }
+
+    svg {
+      font-size: 2rem;
+      color: var(--secondaryColor);
+    }
+  }
+
+  .popularDestinations {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h3 {
+      font-size: 1rem;
+      color: var(--secondaryColor);
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .carousel {
+      position: relative;
+      display: flex;
+      // align-items: center;
+      gap: var(--gap);
+      height: fit-content;
+      width: 100%;
+
+      .nav {
+        position: absolute;
+        // top: 50%;
+        display: flex;
+        align-items: center;
+        // transform: translateY(0);
+        height: 100%;
+
+        svg {
+          font-size: 3rem;
+          color: var(--primaryColor);
+        }
+
+        &:first-child {
+          left: -2.5rem;
+          transform: translateX(-2.5rem);
+        }
+
+        &:last-child {
+          right: -2.5rem;
+          transform: translateX(2.5rem);
+        }
+      }
+
+      .carouselContainer {
+        position: relative;
+        height: 8rem;
+        aspect-ratio: 5/3;
+        border-radius: var(--borderRadius);
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: var(--borderRadius);
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: 700;
+        }
+
+        .imageOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: var(--overlay);
+          // background-color: red;
+          // z-index: 10;
+        }
+      }
+    }
+  }
+}

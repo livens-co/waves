@@ -1,0 +1,24 @@
+nav {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translate(-50%, 0);
+  z-index: 100;
+
+  .menuButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+   cursor: pointer;
+
+    .dot {
+      height: 0.5rem;
+      width: 0.5rem;
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+}
+

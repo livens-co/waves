@@ -1,0 +1,35 @@
+.discover {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  padding: 2rem 12% 6rem;
+
+  .container {
+    height: 100%;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    line-height: 1.2;
+
+    p {
+      width: 50%;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    h2 {
+      width: 50%;
+
+      span {
+        color: var(--secondaryColor);
+      }
+    }
+
+    &:last-child {
+      height: 100%;
+      flex: 2;
+    }
+  }
+}

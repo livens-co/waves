@@ -1,0 +1,143 @@
+.menu {
+  position: fixed;
+  background-color: var(--backgroundColor);
+  z-index: 1000;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  transition: right 2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  padding: 5%;
+
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(7, 20, 36);
+      background: -moz-linear-gradient(
+        90deg,
+        rgba(7, 20, 36, 1) 4%,
+        rgba(7, 20, 36, 0.3) 100%
+      );
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(7, 20, 36, 1) 4%,
+        rgba(7, 20, 36, 0.3) 100%
+      );
+      background: linear-gradient(
+        90deg,
+        rgba(7, 20, 36, 1) 4%,
+        rgba(7, 20, 36, 0.3) 100%
+      );
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    transition: all 300ms ease;
+    color: var(--primaryColor);
+
+    &:hover {
+      color: var(--secondaryColor);
+    }
+  }
+
+  .container {
+    flex: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--gap);
+
+    &:last-child {
+      flex: 1;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      img {
+        width: auto;
+        height: 6rem;
+      }
+    }
+
+    .navigation {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .mainLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        cursor: pointer;
+
+      }
+
+      .menuBookNow {
+        font-size: 2.25rem;
+        color: var(--secondaryColor);
+        cursor: pointer;
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        transition: all 300ms ease;
+
+        svg {
+          margin-right: 0.25rem;
+          transition: all 300ms ease;
+        }
+
+        &:hover {
+          color: var(--secondaryColor);
+
+          svg {
+            color: var(--secondaryColor);
+          }
+        }
+      }
+
+    }
+  }
+}

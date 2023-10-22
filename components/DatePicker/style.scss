@@ -1,0 +1,73 @@
+.datePicker {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 5px;
+  gap: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eeeeee6d;
+
+    button {
+      padding: 0.5rem;
+      color: var(--colorPrimary);
+    }
+
+    .date {
+      font-size: 1.25rem;
+    }
+  }
+  .calendar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    justify-items: center;
+    align-self: center;
+  }
+
+  .day {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    height: 3rem;
+    width: 3rem;
+    transition: all 300ms ease;
+
+    &:hover {
+      background-color: #eeeeee6d;
+      border: 1px solid #868686;
+    }
+  }
+  
+  .disabled {
+    color: #eeeeee6d;
+    pointer-events: none;
+    border: 1px solid transparent;
+  }
+  
+  .active {
+    background-color: rgba(0, 170, 255, 0.4);
+    border: 1px solid var(--secondaryColor);
+    color: #fff;
+    transition: all 300ms ease;
+  }
+}
+
+
+button:disabled {
+  cursor: auto;
+
+  svg {
+    color: #eeeeee6d;
+  }
+}
