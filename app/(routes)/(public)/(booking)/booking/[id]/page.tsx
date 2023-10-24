@@ -2,6 +2,7 @@ import getBooking from "@/actions/get-booking";
 import "./style.scss";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { format, parseISO } from "date-fns";
 
 interface BookingDetailsPageProps {
   params: {
@@ -19,6 +20,8 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
   if (!booking) {
     notFound();
   }
+
+  const formattedDate = format(parseISO(booking.date), "cccc, dd.MM.yyyy.");
 
   return (
     <div className="bookingDetailsPage">
@@ -50,12 +53,7 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
             </p>
             <p>
               <span>Date: </span>
-              {new Date(booking.date).toLocaleDateString("en-DE", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {formattedDate}
             </p>
             <p>
               <span>Group size: </span>

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import BookingInfoForm from "@/components/BookingInfoForm/BookingInfoForm";
 import { createContactMe } from "@/app/api/formContact";
 import { sendEmail } from "@/app/api/sendEmail";
+import { format, parseISO } from "date-fns";
 
 const PersonalInfoPage = () => {
   const [formIsValid, setFormIsValid] = useState<boolean>(false);
@@ -71,13 +72,15 @@ const PersonalInfoPage = () => {
   };
 
   const createCheckout = async () => {
+    const formattedDateStr = format(date, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
+
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
     
       {
         numberOfPeople,
         destination,
-        date,
+        date: formattedDateStr,
         firstName,
         lastName,
         email,
@@ -89,6 +92,9 @@ const PersonalInfoPage = () => {
 
     window.location = response.data.url;
   };
+
+  // const formattedDate = format(parseISO(date), "ccc, dd.MM.yyyy.");
+  const formattedDate = format(date, "ccc, dd.MM.yyyy.")
 
   return (
     <div className="personalInfoPage">
@@ -132,12 +138,7 @@ const PersonalInfoPage = () => {
           <h4>{destination}</h4>
           <p>Date of the trip:</p>
           <h4>
-            {date.toLocaleDateString("en-DE", {
-              weekday: "short",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+          {formattedDate} 
           </h4>
           <p>Number of people:</p>
           <h4>{numberOfPeople}</h4>

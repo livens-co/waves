@@ -21,12 +21,7 @@ export async function POST(req: Request) {
       bookingId,
     } = await req.json();
 
-    // const formattedDate = new Date(date).toLocaleDateString("en-DE", {
-    //   weekday: "short",
-    //   year: "numeric",
-    //   month: "long",
-    //   day: "numeric",
-    // });
+    
 
     // Parse the date string into a Date object using parseISO
     const parsedDate = parseISO(date);
