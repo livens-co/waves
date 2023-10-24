@@ -1,5 +1,6 @@
 import { ConfirmationTemplate } from "@/components/EmailTemplates/ConfirmationTemplate";
 import { ContactTemplate } from "@/components/EmailTemplates/ContactTemplate";
+import { format } from "date-fns";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -20,12 +21,14 @@ export async function POST(req: Request) {
       bookingId,
     } = await req.json();
 
-    const formattedDate = new Date(date).toLocaleDateString("en-DE", {
-      weekday: "short",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    // const formattedDate = new Date(date).toLocaleDateString("en-DE", {
+    //   weekday: "short",
+    //   year: "numeric",
+    //   month: "long",
+    //   day: "numeric",
+    // });
+
+    const formattedDate = format(date, "ccc, dd.MM.yyyy.")
 
     let reactElement;
 
@@ -36,8 +39,8 @@ export async function POST(req: Request) {
         email,
         phone,
         destination,
-        // date: formattedDate,
-        date,
+        date: formattedDate,
+        
         numberOfPeople,
         userNotes,
         bookingId,
@@ -49,8 +52,8 @@ export async function POST(req: Request) {
         email,
         phone,
         destination,
-        // date: formattedDate,
-        date,
+        date: formattedDate,
+      
         numberOfPeople,
         userNotes,
         bookingId,
