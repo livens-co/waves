@@ -49,7 +49,7 @@ const PersonalInfoPage: React.FC<PersonalInfoPageProps> = () => {
         userNotes,
       });
 
-      console.log(response);
+    
       if (response) {
         const { bookingId } = response;
 
