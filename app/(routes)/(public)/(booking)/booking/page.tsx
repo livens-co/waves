@@ -11,6 +11,9 @@ import DestinationPicker from "@/components/DestinationPicker/DestinationPicker"
 import PersonCounter from "@/components/PersonCounter/PersonCounter";
 import { useRouter } from "next/navigation";
 
+
+export const revalidate = 3;
+
 const BookingPage = () => {
   const [destinationIsValid, setDestinationIsValid] = useState<boolean>(false);
   const router = useRouter();
