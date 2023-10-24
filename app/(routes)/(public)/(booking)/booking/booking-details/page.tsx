@@ -6,7 +6,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import Link from "next/link";
 import Image from "next/image";
 import { useGlobalContext } from "@/app/context/store";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
