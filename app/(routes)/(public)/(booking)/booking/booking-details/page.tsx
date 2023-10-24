@@ -76,7 +76,8 @@ const PersonalInfoPage: React.FC<PersonalInfoPageProps> = () => {
 
   const createCheckout = async () => {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      // `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      'https://waves-more.com/api/checkout',
       {
         numberOfPeople,
         destination,
