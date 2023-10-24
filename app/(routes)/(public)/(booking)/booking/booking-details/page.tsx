@@ -14,10 +14,6 @@ import BookingInfoForm from "@/components/BookingInfoForm/BookingInfoForm";
 import { createContactMe } from "@/app/api/formContact";
 import { sendEmail } from "@/app/api/sendEmail";
 
-// interface PersonalInfoPageProps {
-//   setValid: React.Dispatch<React.SetStateAction<boolean>>;
-// }
-
 const PersonalInfoPage = () => {
   const [formIsValid, setFormIsValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);

@@ -11,10 +11,6 @@ import DestinationPicker from "@/components/DestinationPicker/DestinationPicker"
 import PersonCounter from "@/components/PersonCounter/PersonCounter";
 import { useRouter } from "next/navigation";
 
-// interface BookingPageProps {
-//   setValid: React.Dispatch<React.SetStateAction<boolean>>;
-// }
-
 const BookingPage = () => {
   const [destinationIsValid, setDestinationIsValid] = useState<boolean>(false);
   const router = useRouter();
