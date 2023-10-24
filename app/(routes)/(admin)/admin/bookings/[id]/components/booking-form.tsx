@@ -45,7 +45,7 @@ const formSchema = z.object({
   numberOfPeople: z.coerce.number().min(1),
   userNotes: z.string().optional(),
   adminNotes: z.string().optional(),
-  price: z.coerce.number().min(1),
+  price: z.coerce.number().optional(),
   paid: z.boolean().default(false),
 });
 
@@ -86,6 +86,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
           destination: "",
           numberOfPeople: 1,
           paid: false,
+         
         },
   });
 

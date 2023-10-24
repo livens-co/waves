@@ -1,8 +1,9 @@
 import Image from "next/image";
-import "../style.scss";
 import Link from "next/link";
 
-const ThreeIslands = () => {
+import "../style.scss";
+
+const DrvenikDelights = () => {
   return (
     <div className="seafarisPage">
       <header>
@@ -14,8 +15,8 @@ const ThreeIslands = () => {
             height={200}
           />
         </div>
-        <h1>3 Islands</h1>
-        <h2>Hvar-Brač-Vis</h2>
+        <h1>Drvenik Delights</h1>
+
         <div className="backgroundImage">
           <Image
             src="/assets/3-islands.webp"
@@ -69,13 +70,16 @@ const ThreeIslands = () => {
         <div className="tripContainer">
           <div className="text">
             <h1>
-              Island <br /> of Historic Charm
+              Drvenik&apos;s <br /> Natural Splendor
             </h1>
             <p>
-              Bask in the golden glow of Hvar, Croatia&rsquo;s sun-drenched
-              island paradise, with Waves & More as your guide. Stroll through
-              ancient streets, dive into crystal-clear waters, and saver the
-              vibrant nightlife of Hvar, the gem of the Adriatic.{" "}
+              Drvenik, a hidden gem of the Adriatic, beckons travellers with its
+              pristine beauty and shimmering coastline. As you approach, the
+              azure embrace of Krknjaši welcomes you, painting a picturesque
+              scene of crystal-clear waters juxtaposed against a backdrop of
+              untouched nature. This coastal paradise isn&apos;t just a sight
+              for sore eyes but an invitation to immerse oneself in the tranquil
+              rhythms of the sea.
             </p>
           </div>
           <div className="imagesR">
@@ -96,7 +100,7 @@ const ThreeIslands = () => {
           </div>
         </div>
         <div className="tripContainer">
-        <div className="imagesL">
+          <div className="imagesL">
             <div className="image1">
               <Image
                 src="https://media-private.canva.com/K9Y_k/MAEC98K9Y_k/1/s.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20231019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231019T173808Z&X-Amz-Expires=21679&X-Amz-Signature=c8630a231d60bfdeb446e56377dde832f5d4a87abea34ccca5ba0ccbd2606823&X-Amz-SignedHeaders=host&response-expires=Thu%2C%2019%20Oct%202023%2023%3A39%3A27%20GMT"
@@ -114,27 +118,34 @@ const ThreeIslands = () => {
           </div>
           <div className="text">
             <h1>
-              Sunlit <br /> Elegance Island
+              Trogir: <br />A Timeless Tapestry
             </h1>
             <p>
-              Embark on a journey to Vis, the Adriatic&rsquo;s secluded
-              paradise, with Waves & More. As one of the most remote Croatian
-              islands, Vis is a sanctuary of untouched beaches, crystalline
-              waters, and ancient vineyards.
+              From the natural allure of Drvenik, the journey transitions to the
+              cobblestone lanes of Trogir. As a UNESCO World Heritage Site,
+              Trogir is a living testament to epochs gone by. Wandering its
+              ancient streets feels akin to traversing the pages of a rich
+              historical tome. Each stone and corner tells tales of
+              civilisations, artists, and mariners who once graced this Adriatic
+              marvel.
             </p>
           </div>
         </div>
         <div className="tripContainer">
           <div className="text">
             <h1>
-              Gateway <br /> to Paradise
+              Šolta&apos;s <br />
+              Olive Oasis
             </h1>
             <p>
-              Discover the timeless allure of Brač, a Croatian gem nestled in
-              the crystal-clear waters of the Adriatic Sea, with Waves & More.
-              Renowned for its iconic Zlatni Rat Beach, a golden pebble beach
-              that dramatically shifts with the winds, Brač is a
-              sun-seeker&rsquo;s dream.
+              As day reaches a golden twilight, the adventure sails to Šolta.
+              This island, renowned for its age-old olive groves, offers more
+              than scenic beauty. At Maslenica, the heart of Šolta, one can
+              indulge in the island&apos;s olive-rich delights. Whether you&apos;re
+              tasting freshly pressed olive oil or simply strolling amidst the
+              groves, Šolta is a perfect culmination to a tour that seamlessly
+              weaves history, nature, and culture into one unforgettable
+              tapestry.
             </p>
           </div>
           <div className="imagesR">
@@ -200,4 +211,4 @@ const ThreeIslands = () => {
   );
 };
 
-export default ThreeIslands;
+export default DrvenikDelights;

@@ -12,7 +12,7 @@
     top: 5%;
     left: 5%;
     height: 3rem;
-    
+
     img {
       height: 100%;
       width: auto;
@@ -39,30 +39,7 @@
     }
   }
 
-  .counterWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-
-    h4 {
-    }
-
-    .counter {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      align-content: center;
-      justify-items: center;
-      width: 8rem;
-
-      svg {
-        color: var(--primaryColor);
-      }
-    }
-  }
-
-  .button {
+  .nextButton {
     padding: 0.5rem 1.25rem;
     border: 1px solid var(--secondaryColor);
     border-radius: 2rem;
@@ -72,6 +49,8 @@
     text-align: center;
     color: var(--primaryColor);
   }
+
+  
 
   .backgroundImage {
     position: absolute;

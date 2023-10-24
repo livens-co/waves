@@ -1,9 +1,9 @@
 import Stripe from "stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-
 import { stripe } from "@/lib/stripe";
 import prismadb from "@/lib/prismadb";
+import axios from "axios";
 
 export async function POST(req: Request) {
   const body = await req.text();
@@ -33,14 +33,25 @@ export async function POST(req: Request) {
       },
     });
 
-    // SEND CONFIRMATION EMAIL
-    const sendEmail = await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: booking.email }),
-    });
+    try {
+      await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/send`, {
+        email: booking.email,
+        firstName: booking.firstName, 
+        lastName: booking.lastName,
+        phone: booking.phone,
+        destination: booking.destination,
+        date: booking.date,
+        numberOfPeople: booking.numberOfPeople,
+        userNotes: booking.userNotes,
+        bookingId: booking.id,
+        emailType: "stripe", 
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      return new NextResponse("Email sending failed", { status: 500 });
+    }
+
+    return new NextResponse("Email sent successfully", { status: 200 });
   }
 
   return new NextResponse(null, { status: 200 });

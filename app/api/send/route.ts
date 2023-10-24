@@ -1,23 +1,83 @@
-import { EmailTemplate } from "@/components/email-template";
+import { ConfirmationTemplate } from "@/components/EmailTemplates/ConfirmationTemplate";
+import { ContactTemplate } from "@/components/EmailTemplates/ContactTemplate";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(
-  req: Request,
-  { params }: { params: { email: string } }
-) {
+export async function POST(req: Request) {
   try {
-    const data = await resend.emails.send({
-      from: "noreply@livens.co",
-      to: params.email,
-      subject: "Test Confirmation email",
-      react: EmailTemplate({ firstName: "John" }) as React.ReactElement,
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      destination,
+      date,
+      numberOfPeople,
+      userNotes,
+      emailType,
+      bookingId,
+    } = await req.json();
+
+    const formattedDate = new Date(date).toLocaleDateString("en-DE", {
+      weekday: "short",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
+
+    let reactElement;
+
+    if (emailType === "contact") {
+      reactElement = ContactTemplate({
+        firstName,
+        lastName,
+        email,
+        phone,
+        destination,
+        date: formattedDate,
+        numberOfPeople,
+        userNotes,
+        bookingId,
+      }) as React.ReactElement;
+    } else if (emailType === "stripe") {
+      reactElement = ConfirmationTemplate({
+        firstName,
+        lastName,
+        email,
+        phone,
+        destination,
+        date: formattedDate,
+        numberOfPeople,
+        userNotes,
+        bookingId,
+      }) as React.ReactElement;
+    } else {
+      throw new Error("Invalid emailType");
+    }
+
+    const data = await resend.emails.send({
+      from: "Waves&more <noreply@waves-more.com>",
+      to: [email],
+      subject: getEmailSubject(emailType),
+      react: reactElement,
+    });
+
+    console.log(data);
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error });
+    console.log("Email sending failed:", error);
+    return NextResponse.json({ error: "Email sending failed" });
   }
+}
+
+function getEmailSubject(emailType: string): string {
+  if (emailType === "contact") {
+    return "Contact Confirmation Email";
+  } else if (emailType === "stripe") {
+    return "Payment Confirmation Email";
+  }
+  throw new Error("Invalid emailType");
 }

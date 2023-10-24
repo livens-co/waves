@@ -64,7 +64,9 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json(booking);
+    const bookingId = booking.id;
+
+    return NextResponse.json({ bookingId });
   } catch (error) {
     console.log("[BOOKINGS_POST]", error);
     return new NextResponse("Internal Server Error", { status: 500 });

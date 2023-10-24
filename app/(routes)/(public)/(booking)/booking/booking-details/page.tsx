@@ -6,65 +6,75 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import Link from "next/link";
 import Image from "next/image";
 import { useGlobalContext } from "@/app/context/store";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { NextResponse } from "next/server";
-import { useSearchParams } from "next/navigation";
-import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-const PersonalInfoPage = () => {
-  const searchParams = useSearchParams();
-  const [loading, setLoading] = useState(false);
+import BookingInfoForm from "@/components/BookingInfoForm/BookingInfoForm";
+import { createContactMe } from "@/app/api/formContact";
+import { sendEmail } from "@/app/api/sendEmail";
+
+interface PersonalInfoPageProps {
+  setValid: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const PersonalInfoPage: React.FC<PersonalInfoPageProps> = () => {
+  const [formIsValid, setFormIsValid] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const {
     numberOfPeople,
     destination,
     date,
     firstName,
-    setFirstName,
     lastName,
-    setLastName,
     email,
-    setEmail,
     phone,
-    setPhone,
     userNotes,
-    setUserNotes,
   } = useGlobalContext();
 
-  useEffect(() => {
-    if (searchParams.get("success")) {
-      toast.success("Payment successful");
+  const handleCreateContactMe = async () => {
+    try {
+      setLoading(true);
+      const response = await createContactMe({
+        numberOfPeople,
+        destination,
+        date,
+        firstName,
+        lastName,
+        email,
+        phone,
+        userNotes,
+      });
+
+      console.log(response);
+      if (response) {
+        const { bookingId } = response;
+
+        await sendEmail({
+          numberOfPeople,
+          destination,
+          date,
+          firstName,
+          lastName,
+          email,
+          phone,
+          userNotes,
+          emailType: "contact",
+          bookingId,
+        });
+        router.push("/success");
+      }
+    } catch (error) {
+      console.error("Booking creation failed:", error);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    if (searchParams.get("canceled")) {
-      toast.error("Payment canceled");
-    }
-  }, [searchParams]);
-
-  // const createBooking = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.post("/api/bookings", {
-  //       numberOfPeople,
-  //       destination,
-  //       date,
-  //       firstName,
-  //       lastName,
-  //       email,
-  //       phone,
-  //       userNotes,
-  //     });
-
-  //     // return NextResponse.json(response)
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  const onCheckout = async () => {
+  const createCheckout = async () => {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
       {
@@ -76,6 +86,7 @@ const PersonalInfoPage = () => {
         email,
         phone,
         userNotes,
+        emailType: "stripe",
       }
     );
 
@@ -100,61 +111,20 @@ const PersonalInfoPage = () => {
       </div>
       <div className="container">
         <div className="form">
-          <form>
-            <div className="row">
-              <input
-                type="text"
-                placeholder="First name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Last name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </div>
-            <div className="row">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="row">
-              {" "}
-              <input
-                type="tel"
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
-            <div className="row">
-              {" "}
-              <textarea
-                name=""
-                rows={3}
-                placeholder="Notes"
-                value={userNotes}
-                onChange={(e) => setUserNotes(e.target.value)}
-              />
-            </div>
-          </form>
+          <BookingInfoForm setValid={setFormIsValid} />
+
           <div className="buttons">
             <button
               className="btn"
-              disabled={loading}
-              // onClick={createBooking}
+              disabled={!formIsValid || loading}
+              onClick={handleCreateContactMe}
             >
               Contact me
             </button>
             <button
               className="btn bookNow"
-              disabled={loading}
-              onClick={onCheckout}
+              disabled={!formIsValid || loading}
+              onClick={createCheckout}
             >
               Book now
             </button>
@@ -177,7 +147,6 @@ const PersonalInfoPage = () => {
         </div>
       </div>
 
-      {/* TOUR DETAILS ON THE SIDE */}
       <div className="backgroundImage">
         <Image
           src="/assets/wavesBoat.webp"

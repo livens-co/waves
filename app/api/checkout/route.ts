@@ -1,4 +1,3 @@
-import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
 import { stripe } from "@/lib/stripe";
@@ -84,7 +83,10 @@ export async function POST(req: Request) {
     },
   });
 
-  return NextResponse.json({ url: session.url }, {
-    headers: corsHeaders
-  });
+  return NextResponse.json(
+    { url: session.url },
+    {
+      headers: corsHeaders,
+    }
+  );
 }

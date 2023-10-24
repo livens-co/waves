@@ -19,8 +19,8 @@ const Menu = ({ openMenu, closeMenu }: MenuProps) => {
     <div
       className="menu"
       style={{
-        right: openMenu ? "0" : "-100%",
-        transitionDelay: openMenu ? "0s" : "0.55s",
+        right: openMenu ? "0" : "-100vw",
+        transitionDelay: openMenu ? "0s" : "0.15s",
       }}
     >
       <button onClick={closeMenu} className="closeButton">
@@ -34,12 +34,17 @@ const Menu = ({ openMenu, closeMenu }: MenuProps) => {
       <div className="container">
         <div className="navigation">
           <div className="mainLinks">
-            <div className="link">Seafaris</div>
-            <div className="link">Destinations</div>
-            <div className="link">Waves Fleet</div>
-            <div className="link">Crew</div>
+            <Link href="/" className="link" onClick={closeMenu}>
+              Home
+            </Link>
+            <Link href="/tours" className="link" onClick={closeMenu}>
+              Seafaris Tours
+            </Link>
+            <Link href="/fleet-and-crew" className="link" onClick={closeMenu}>
+              Fleet & Crew
+            </Link>
           </div>
-          <Link href="/booking" className="menuBookNow">
+          <Link href="/booking" className="menuBookNow" onClick={closeMenu}>
             Book now
           </Link>
         </div>

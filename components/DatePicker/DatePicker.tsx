@@ -1,22 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.scss";
 
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import { useGlobalContext } from "@/app/context/store";
 
-type DatePickerProps = {
-  onDateChange: (date: Date) => void;
-  value: Date;
-};
-
-const DatePicker = ({ onDateChange }: DatePickerProps) => {
+const DatePicker = () => {
   const today = new Date();
-  const { date, setDate } = useGlobalContext();
 
-  const [selectedDate, setSelectedDate] = useState(today);
+  const { date, setDate } = useGlobalContext();
 
   const [month, setMonth] = useState(date.getMonth());
   const [year, setYear] = useState(date.getFullYear());
@@ -30,15 +24,6 @@ const DatePicker = ({ onDateChange }: DatePickerProps) => {
   const isPastMonth =
     year < today.getFullYear() ||
     (year === today.getFullYear() && month <= today.getMonth());
-
-  const selectDate = (day: number | undefined) => {
-    const newDate = new Date(year, month, day);
-    if (newDate >= today) {
-      setSelectedDate(newDate);
-      setDate(newDate);
-      onDateChange(newDate);
-    }
-  };
 
   const prevMonth = () => {
     if (month === 0) {
@@ -57,6 +42,15 @@ const DatePicker = ({ onDateChange }: DatePickerProps) => {
       setMonth(month + 1);
     }
   };
+
+  const handleDateChange = (newDate: Date | ((prevDate: Date) => Date)) => {
+    setDate(newDate as Date);
+  };
+
+  useEffect(() => {
+    setMonth(date.getMonth());
+    setYear(date.getFullYear());
+  }, [date]);
 
   return (
     <div className="datePicker">
@@ -89,12 +83,12 @@ const DatePicker = ({ onDateChange }: DatePickerProps) => {
           <div
             key={index}
             className={`day ${
-              new Date(year, month, index + 1).toISOString().split("T")[0] ===
-              selectedDate.toISOString().split("T")[0]
+              new Date(year, month, index + 1).toDateString() ===
+              date.toDateString()
                 ? "active"
                 : ""
             } ${new Date(year, month, index + 1) < today ? "disabled" : ""}`}
-            onClick={() => selectDate(index + 1)}
+            onClick={() => handleDateChange(new Date(year, month, index + 1))}
           >
             {index + 1}
           </div>
