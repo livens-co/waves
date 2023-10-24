@@ -1,6 +1,6 @@
 import { ConfirmationTemplate } from "@/components/EmailTemplates/ConfirmationTemplate";
 import { ContactTemplate } from "@/components/EmailTemplates/ContactTemplate";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -28,7 +28,11 @@ export async function POST(req: Request) {
     //   day: "numeric",
     // });
 
-    const formattedDate = format(date, "ccc, dd.MM.yyyy.")
+    // Parse the date string into a Date object using parseISO
+    const parsedDate = parseISO(date);
+
+    // Format the date as needed
+    const formattedDate = format(parsedDate, "ccc, dd.MM.yyyy.");
 
     let reactElement;
 
