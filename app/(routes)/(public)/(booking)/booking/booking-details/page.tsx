@@ -93,7 +93,6 @@ const PersonalInfoPage = () => {
     window.location = response.data.url;
   };
 
-  // const formattedDate = format(parseISO(date), "ccc, dd.MM.yyyy.");
   const formattedDate = format(date, "ccc, dd.MM.yyyy.")
 
   return (

@@ -39,7 +39,6 @@ export async function POST(req: Request) {
         phone,
         destination,
         date: formattedDate,
-        
         numberOfPeople,
         userNotes,
         bookingId,
@@ -52,7 +51,6 @@ export async function POST(req: Request) {
         phone,
         destination,
         date: formattedDate,
-      
         numberOfPeople,
         userNotes,
         bookingId,
