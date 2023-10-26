@@ -6,6 +6,7 @@ import Experiences from "@/components/Experiences/Experiences";
 import Tours from "@/components/Tours/Tours";
 import ExperienceWaves from "@/components/ExperienceWaves/ExperienceWaves";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -38,7 +39,31 @@ const HomePage = () => {
 
       {/* FIND DESTINATION */}
       <section>
-        <Destinations />
+        <div className="findDestination">
+          <div className="title">
+            <h1>Discover Croatia</h1>
+            <p>
+              where endless coastline meets <br /> millennia of rich history.
+            </p>
+          </div>
+          {/* <div className="searchDestinations">
+        <div className="searchBar">
+          <input type="text" placeholder="Find your destination" />
+          <button>
+            <SearchRoundedIcon />
+          </button>
+        </div>
+        <button>
+          <CalendarTodayOutlinedIcon />
+        </button>
+        <button>
+          <GroupsOutlinedIcon />
+        </button>
+      </div> */}
+         
+          <Destinations />
+          <Link href='/tours' className="buttonInvert">See more</Link>
+        </div>
       </section>
 
       {/* EXPERIENCE WAVES */}

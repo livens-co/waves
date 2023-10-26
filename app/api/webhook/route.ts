@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       },
       data: {
         paid: true,
-      },
+      }, 
     });
 
     try {

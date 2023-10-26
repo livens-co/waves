@@ -103,7 +103,7 @@ const Tours = () => {
           />
         </div>
       </div>
-      <button className="buttonInvert">there&rsquo;s more</button>
+      {/* <button className="buttonInvert">there&rsquo;s more</button> */}
     </div>
   );
 };

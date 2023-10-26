@@ -39,6 +39,10 @@ export const ConfirmationTemplate: React.FC<
       <li>{userNotes}</li>
       <li>{bookingId}</li>
     </ul>
-    <h4>Deposit paid</h4>
+    <p>
+      You can see your booking details on{" "}
+      <a href={`https://waves-more.com/booking/${bookingId}`}>this link</a>.
+    </p>
+    <h4>Deposit paid!</h4>
   </div>
 );

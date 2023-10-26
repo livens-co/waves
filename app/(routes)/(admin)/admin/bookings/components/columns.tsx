@@ -10,7 +10,7 @@ export type BookingColumn = {
   date: string;
   destination: string;
   size: number;
-  paid: boolean;
+  paid: string;
   createdAt: string;
 };
 
@@ -34,6 +34,10 @@ export const columns: ColumnDef<BookingColumn>[] = [
   {
     accessorKey: "email",
     header: "Email",
+  },
+  {
+    accessorKey: "paid",
+    header: "Desposit",
   },
   {
     id: "actions",

@@ -18,10 +18,10 @@ const BookingsPage = async () => {
     email: item.email,
     firstName: item.firstName,
     lastName: item.lastName,
-    date: format(item.date, "ccc, dd.MM.yyyy."),
+    date: format(item.date, "cccc, dd.MM.yyyy."),
     destination: item.destination,
     size: item.numberOfPeople,
-    paid: item.paid,
+    paid: item.paid ? "Yes" : "No",
     createdAt: format(item.createdAt, "MMMM do, yyyy"),
   }));
 

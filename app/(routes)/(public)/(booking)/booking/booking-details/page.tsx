@@ -46,7 +46,6 @@ const PersonalInfoPage = () => {
         userNotes,
       });
 
-    
       if (response) {
         const { bookingId } = response;
 
@@ -72,28 +71,25 @@ const PersonalInfoPage = () => {
   };
 
   const createCheckout = async () => {
-    const formattedDateStr = format(date, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
-
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-    
+
       {
         numberOfPeople,
         destination,
-        date: formattedDateStr,
+        date,
         firstName,
         lastName,
         email,
         phone,
         userNotes,
-        emailType: "stripe",
       }
     );
 
     window.location = response.data.url;
   };
 
-  const formattedDate = format(date, "ccc, dd.MM.yyyy.")
+  const formattedDate = format(date, "ccc, dd.MM.yyyy.");
 
   return (
     <div className="personalInfoPage">
@@ -136,9 +132,7 @@ const PersonalInfoPage = () => {
           <p>You are booking trip to:</p>
           <h4>{destination}</h4>
           <p>Date of the trip:</p>
-          <h4>
-          {formattedDate} 
-          </h4>
+          <h4>{formattedDate}</h4>
           <p>Number of people:</p>
           <h4>{numberOfPeople}</h4>
         </div>

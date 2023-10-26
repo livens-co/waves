@@ -18,7 +18,7 @@ const sendEmail = async (emailData: EmailData): Promise<boolean> => {
   try {
     const response = await axios.post("/api/send", { ...emailData });
 
-    if (response.status === 200) {
+    if (response.status === 200) { 
       return true;
     }
     toast.error("Email sending failed");
@@ -31,3 +31,5 @@ const sendEmail = async (emailData: EmailData): Promise<boolean> => {
 };
 
 export { sendEmail };
+
+

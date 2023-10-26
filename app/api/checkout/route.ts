@@ -15,7 +15,7 @@ export async function OPTIONS() {
 
 export async function POST(req: Request) {
   const {
-    numberOfPeople,
+    numberOfPeople, 
     destination,
     date,
     firstName,
@@ -61,12 +61,14 @@ export async function POST(req: Request) {
       email,
       date,
       phone,
-      destination,
+      destination, 
       numberOfPeople,
       paid,
       userNotes,
     },
   });
+
+  const bookingId = booking.id;
 
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -79,7 +81,7 @@ export async function POST(req: Request) {
     success_url: `${process.env.NEXT_PUBLIC_URL}/success`,
     cancel_url: `${process.env.NEXT_PUBLIC_URL}/canceled`,
     metadata: {
-      bookingId: booking.id,
+      bookingId,
     },
   });
 

@@ -1,9 +1,139 @@
 .toursPage {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 5%;
 
-  gap: 2rem;
-  padding: 2rem;
+  header {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      width: 80%;
+      font-size: 2rem;
+      text-align: center;
+      line-height: 1.4;
+
+      span {
+        color: var(--secondaryColor);
+      }
+    }
+  }
+
+  .toursGrid {
+    padding: 2rem 0;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+
+    .tourContainer {
+      width: 20rem;
+      height: 13rem;
+      overflow: hidden;
+      border-radius: 1rem;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: all 300ms ease-in-out;
+      }
+
+      .imageOverlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--overlay);
+      }
+
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        width: 70%;
+        font-weight: 600;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .backgroundImage {
+    position: absolute;
+    top: 30%;
+    right: -15%;
+    height: 60rem;
+    width: auto;
+    z-index: -1;
+
+    img {
+      height: 100%;
+      width: auto;
+      transform: rotate(-90deg);
+      opacity: 0.075;
+      object-fit: cover;
+    }
+  }
+
+  
+
+  .customTours {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem 4rem;
+
+    .tourText {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+        color: var(--secondaryColor);
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        text-align: start;
+      }
+    }
+
+    .customTourCta {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}
+.toursBottom{
+  width: 100%;
+  position: relative;
 }
 
 .seafarisPage {
@@ -35,6 +165,11 @@
       }
     }
 
+    h1{
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
     .backgroundImage {
       position: absolute;
       top: 0;
@@ -55,14 +190,16 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(7, 20, 36, 0.3);
+        background: rgba(7, 20, 36, 0.5);
       }
     }
+
+    
   }
 
   .quote {
     width: 100%;
-    padding: 2rem 5%;
+    padding: 1rem 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,6 +208,7 @@
 
     h1 {
       line-height: 1.1;
+      font-size: 2rem;
 
       span {
         color: var(--secondaryColor);
@@ -108,6 +246,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 1.75rem;
+        font-weight: 600;
       }
 
       img {
@@ -122,7 +262,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: var(--overlay);
+        background-color: rgba(8, 20, 36, 0.3);
       }
 
       &:nth-child(1) {
@@ -140,7 +280,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 5rem;
     padding: 2rem 0;
 
     .tripContainer {
@@ -157,6 +297,7 @@
 
         h1 {
           line-height: 1;
+          font-size: 1.75rem;
         }
 
         p {
@@ -255,6 +396,7 @@
     h1 {
       color: var(--secondaryColor);
       margin-bottom: 1rem;
+      font-size: 1.75rem;
     }
 
     .grid {
@@ -323,6 +465,62 @@
     }
   }
 
-  .cta {
+  .moreTrips {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5% 4rem;
+    gap: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--secondaryColor);
+      text-align: center;
+      // font-weight: 600;
+      // letter-spacing: 0.05em;
+    }
   }
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("../../../../public/assets/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave1 {
+  animation: animate1 16s linear infinite;
+  z-index: 10;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+.wave2 {
+  animation: animate2 15s linear infinite;
+  z-index: 9;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 8px;
+}
+
+.wave3 {
+  animation: animate1 20s linear infinite;
+  z-index: 8;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 13px;
+}
+
+.wave4 {
+  animation: animate2 10s linear infinite;
+  z-index: 7;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 10px;
 }

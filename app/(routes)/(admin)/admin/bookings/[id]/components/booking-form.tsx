@@ -62,7 +62,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? "Update product" : "Create booking";
+  const title = initialData ? "Update booking" : "Create booking";
   const description = initialData ? "Update booking" : "Create a new booking";
   const toastMessage = initialData ? "Booking updated." : "Booking created.";
   const action = initialData ? "Save changes" : "Create";

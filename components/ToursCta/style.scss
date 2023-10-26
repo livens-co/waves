@@ -1,0 +1,118 @@
+.toursCta {
+  width: 100%;
+  padding: 4rem 5%;
+  display: flex;
+  position: relative;
+  height: 35rem;
+
+  // .bgImages {
+  //   flex:auto;
+  //   align-items: center;
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   // z-index: -1;
+  //   position: relative;
+
+    .imagesContainer {
+      flex: 2;
+      display: flex;
+      position: relative;
+      // width: 17rem;
+      // height: 17rem;
+      //   transform: translate(-50%, -60%);
+
+      // .bgImage {
+      //   display: flex;
+      //   // top: 40%;
+      //   // left: 40%;
+      //   // transform: translate(-50%, -50%);
+      //   height: 17rem;
+      //   width: 17rem;
+      //   overflow: hidden;
+      //   border-radius: 2rem;
+      //   border: 0.25rem solid var(--backgroundColor);
+      //   // border: 0.25rem solid white;
+      //   transform: rotate(-13deg);
+
+        img {
+          position: relative;
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .imageOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--overlay);
+        }
+      // }
+
+      .bgImage2 {
+        display: flex;
+        z-index: -1;
+        transform: rotate(-35deg);
+        border: none;
+        height: 17rem;
+        width: 17rem;
+        overflow: hidden;
+        border-radius: 2rem;
+
+        img {
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .imageOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--overlay);
+        }
+      }
+    }
+  // }
+
+  .ctaContent {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h2 {
+      font-size: 1.25rem;
+      color: var(--secondaryColor);
+      line-height: 1.2;
+      //   align-self: center;
+      text-align: start;
+      padding-left: 10%;
+    }
+
+    a {
+      margin-left: 10%;
+    }
+
+    .title {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      p {
+        font-size: 1.75rem;
+        color: var(--secondaryColor);
+        line-height: 1.2;
+
+        &:nth-child(2) {
+          color: var(--primaryColor);
+        }
+      }
+    }
+  }
+}

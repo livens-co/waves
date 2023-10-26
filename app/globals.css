@@ -157,12 +157,46 @@ body,
   justify-content: center;
 }
 
+.buttonInvert {
+  background-color: var(--tertiary);
+  color: var(--backgroundColor);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonInvert:hover {
+  background-color: var(--secondaryColor);
+  color: var(--tertiary);
+}
+
 .btn:disabled,
 .btn[disabled],
 .nextButton:disabled,
 .nextButton[disabled] {
-  background-color: rgba(255, 68, 0, 0.3) !important;
-  border-color: rgba(255, 68, 0, 0.3) !important;
+  background-color: #666 !important;
+  border-color: #666 !important;
   cursor: not-allowed;
-  color: #666 !important;
+  color: #acacac !important;
+}
+
+@keyframes animate1 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
 }

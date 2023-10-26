@@ -2,7 +2,6 @@ import Image from "next/image";
 import "./style.scss";
 
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-// import boat from '../../assets/wavesBoat.webp';
 
 const ExperienceWaves = () => {
   return (
