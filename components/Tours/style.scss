@@ -12,6 +12,7 @@
     color: var(--secondaryColor);
     font-size: 1.75rem;
     // margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   .tourContainerText {
@@ -90,4 +91,67 @@
       object-fit: cover;
     }
   }
+}
+
+@media screen and (max-width: 1100px) {
+  .tours {
+    padding: 0 5%;
+    .tourList {
+      gap: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+.tours {
+  .tourList {
+    grid-template-columns: repeat(2, 1fr);
+
+    .tourContainer {
+      width: 15rem;
+      // height: 15rem;
+    }
+  }
+}
+}
+
+@media screen and (max-width: 600px) {
+  .tours {
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .tourContainerText {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tourList {
+      // width: 90%;
+      // grid-template-columns: repeat(1, 1fr);
+      .tourContainer {
+        // width: 100%;
+        width: 13rem;
+        height: 8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+.tours {
+  .tourList{
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 1.15rem;
+
+    .tourContainer {
+      width: 45%;
+      height: 8rem;
+    }
+  }
+}
 }

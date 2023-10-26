@@ -146,7 +146,7 @@ body,
 }
 
 .globalLoading {
-  background-color: green;
+  /* background-color: green; */
 }
 
 .notFoundPage {

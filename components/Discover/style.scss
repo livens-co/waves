@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     gap: 2rem;
     line-height: 1.2;
 
@@ -21,20 +20,6 @@
       font-size: 1.75rem;
       font-weight: 500;
     }
-    // h2 {
-    //   width: 50%;
-    //   font-size: 1.5rem;
-    //   line-height: 1.2;
-
-    //   span {
-    //     color: var(--secondaryColor);
-    //   }
-    // }
-
-    // &:last-child {
-    //   height: 100%;
-    //   flex: 2;
-    // }
   }
 
   .imageContainer {
@@ -47,15 +32,130 @@
     line-height: 1.2;
     position: relative;
 
+    .images {
+      height: 40rem;
+      width: 28rem;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
     h2 {
       position: absolute;
-      bottom: 0;
+      bottom: -10%;
       width: 70%;
       font-size: 1.75rem;
       line-height: 1;
 
       span {
         color: var(--secondaryColor);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .discover {
+    padding: 2rem 8% 6rem;
+    .container {
+      p {
+        width: 90%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .discover {
+    padding: 2rem 5% 6rem;
+    height: 27rem;
+
+    .container {
+      flex: 2;
+
+      p {
+        width: 100%;
+        font-size: 1.5rem;
+      }
+    }
+
+    .imageContainer {
+      .images {
+        width: 20rem;
+        height: auto;
+      }
+
+      h2 {
+        width: 90%;
+        font-size: 1.5rem;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .discover {
+    height: fit-content;
+    flex-direction: column-reverse;
+    gap: 5rem;
+
+    .container {
+      flex: unset;
+      // padding: 0;
+      justify-content: flex-start;
+      align-items: center;
+
+      p {
+        width: 28rem;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    .imageContainer {
+      flex: unset;
+
+      .images {
+        display: flex;
+        justify-content: center;
+        height: 20rem;
+        width: auto;
+      }
+      h2 {
+        width: 28rem;
+        align-self: center;
+        bottom: -5%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .discover {
+    padding: 2rem 5% 4rem;
+    .container {
+      p {
+        width: 100%;
+        font-size: 1.25rem;
+      }
+    }
+    .imageContainer {
+      align-items: center;
+
+      .images {
+        width: 80%;
+        height: auto;
+      }
+
+      h2 {
+        width: 80%;
+        font-size: 1.25rem;
+        bottom: -15%;
+        left: 10%;
       }
     }
   }

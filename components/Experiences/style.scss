@@ -4,8 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
-  padding: 4rem 10%;
+  gap: 3rem;
+  padding: 2rem 10%;
 
   h1{
     font-size: 1.75rem;
@@ -52,4 +52,21 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 800px) {
+  .experiences{
+    padding: 0 5%;
+    gap: 2rem;
+
+    .carousel {
+      flex-direction: column;
+      gap: 2rem;
+
+      .nav {
+        display: none;
+      }
+    }
+  }
+
 }
