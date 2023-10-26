@@ -1,89 +1,61 @@
 .toursCta {
-  width: 100%;
-  padding: 4rem 5%;
+  width: 50rem;
+  margin: 4rem 5%;
+  // margin: 4rem auto;
   display: flex;
   position: relative;
-  height: 35rem;
+  height: 23rem;
 
-  // .bgImages {
-  //   flex:auto;
-  //   align-items: center;
-  //   display: flex;
-  //   justify-content: flex-start;
-  //   // z-index: -1;
-  //   position: relative;
+  .imagesContainer {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    // flex: 2;
+    // display: flex;
+    // position: relative;
+    // justify-content: flex-end;
 
-    .imagesContainer {
-      flex: 2;
-      display: flex;
+    img {
       position: relative;
-      // width: 17rem;
-      // height: 17rem;
-      //   transform: translate(-50%, -60%);
-
-      // .bgImage {
-      //   display: flex;
-      //   // top: 40%;
-      //   // left: 40%;
-      //   // transform: translate(-50%, -50%);
-      //   height: 17rem;
-      //   width: 17rem;
-      //   overflow: hidden;
-      //   border-radius: 2rem;
-      //   border: 0.25rem solid var(--backgroundColor);
-      //   // border: 0.25rem solid white;
-      //   transform: rotate(-13deg);
-
-        img {
-          position: relative;
-          width: auto;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .imageOverlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: var(--overlay);
-        }
-      // }
-
-      .bgImage2 {
-        display: flex;
-        z-index: -1;
-        transform: rotate(-35deg);
-        border: none;
-        height: 17rem;
-        width: 17rem;
-        overflow: hidden;
-        border-radius: 2rem;
-
-        img {
-          width: auto;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .imageOverlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: var(--overlay);
-        }
-      }
+      width: auto;
+      height: 23rem;
+      object-fit: cover;
     }
-  // }
+
+    .imageOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(7, 20, 36);
+      background: -moz-linear-gradient(
+        160deg,
+        rgba(7, 20, 36, 0.20073967086834732) 0%,
+        rgba(7, 20, 36, 0.6993391106442577) 80%
+      );
+      background: -webkit-linear-gradient(
+        160deg,
+        rgba(7, 20, 36, 0.20073967086834732) 0%,
+        rgba(7, 20, 36, 0.6993391106442577) 80%
+      );
+      background: linear-gradient(
+        160deg,
+        rgba(7, 20, 36, 0.20073967086834732) 0%,
+        rgba(7, 20, 36, 0.6993391106442577) 80%
+      );
+    }
+  }
 
   .ctaContent {
-    flex: 3;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 
     h2 {
       font-size: 1.25rem;
@@ -91,11 +63,11 @@
       line-height: 1.2;
       //   align-self: center;
       text-align: start;
-      padding-left: 10%;
+      padding-left: 20%;
     }
 
     a {
-      margin-left: 10%;
+      margin-left: 20%;
     }
 
     .title {
@@ -108,6 +80,8 @@
         font-size: 1.75rem;
         color: var(--secondaryColor);
         line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: 0.05em;
 
         &:nth-child(2) {
           color: var(--primaryColor);

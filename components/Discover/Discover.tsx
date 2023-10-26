@@ -1,6 +1,7 @@
 
 import Link from 'next/link'
 import './style.scss'
+import Image from 'next/image'
 
 const Discover = () => {
   return (
@@ -14,8 +15,10 @@ const Discover = () => {
               Discover
             </Link>
           </div>
-          <div className="container">
-            <div className="images">imgs</div>
+          <div className="imageContainer">
+            <div className="images">
+              <Image src='/assets/3img.png' alt='Discover' height={400} width={400}/>
+            </div>
             <h2>
               Choose <br />
               best for your <br /> <span> vacation</span>

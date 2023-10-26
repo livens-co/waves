@@ -5,12 +5,11 @@ import Image from "next/image";
 const ToursCta = () => {
   return (
     <div className="toursCta">
-      {/* <div className="bgImages"> */}
-        <div className="imagesContainer">
-          <Image src="/assets/cta.png" alt="" fill />
-          <div className="imageOverlay" />
-        </div>
-      {/* </div> */}
+      <div className="imagesContainer">
+        <Image src="/assets/cta.png" alt="" height={400} width={400} />
+        <div className="imageOverlay" />
+      </div>
+
       <div className="ctaContent">
         <h2>
           Find next <br /> available date
