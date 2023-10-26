@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--gap);
 
   header {
@@ -121,6 +122,13 @@
       }
     }
   }
+
+  // .toursSectionTitle {
+  //   text-align: center;
+  //   font-size: 1.75rem;
+  //   color: var(--secondaryColor);
+  //   margin-bottom: 4rem;
+  // }
 }
 
 @media screen and (max-width: 1200px) {

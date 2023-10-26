@@ -44,6 +44,12 @@ const data = {
       image: "/assets/vibrant-vis/4.jpeg",
       href: 'vibrant-vis',
     },
+    {
+      id: 8,
+      name: 'Custom tours',
+      image: "/assets/homepageHeader.jpeg",
+      href: '/',
+    },
   ],
   tours:[
     {

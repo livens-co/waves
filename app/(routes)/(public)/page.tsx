@@ -88,6 +88,7 @@ const HomePage = () => {
 
       {/* TOURS */}
       <section>
+      
         <Tours />
       </section>
 
