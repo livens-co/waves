@@ -81,7 +81,7 @@
   
   .popularDestinationSlider {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     // max-width: 40rem;
     min-height: 13rem;
     display: flex;
@@ -90,6 +90,7 @@
     overflow: hidden;
     // padding: 1rem;
     gap: 1rem;
+    // padding: 0 5%;
 
     button {
       padding: 0.5rem;
@@ -107,6 +108,7 @@
       .destinationInnerContainer {
         display: flex;
         gap: 1rem;
+        
 
         .destinationCard {
           height: 10rem;

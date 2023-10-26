@@ -46,23 +46,13 @@ const HomePage = () => {
               where endless coastline meets <br /> millennia of rich history.
             </p>
           </div>
-          {/* <div className="searchDestinations">
-        <div className="searchBar">
-          <input type="text" placeholder="Find your destination" />
-          <button>
-            <SearchRoundedIcon />
-          </button>
-        </div>
-        <button>
-          <CalendarTodayOutlinedIcon />
-        </button>
-        <button>
-          <GroupsOutlinedIcon />
-        </button>
-      </div> */}
-         
-          <Destinations />
-          <Link href='/tours' className="buttonInvert">See more</Link>
+
+          <div className="homePageDestinationSlider">
+            <Destinations />
+          </div>
+          <Link href="/tours" className="buttonInvert">
+            See more
+          </Link>
         </div>
       </section>
 
@@ -88,7 +78,6 @@ const HomePage = () => {
 
       {/* TOURS */}
       <section>
-      
         <Tours />
       </section>
 
