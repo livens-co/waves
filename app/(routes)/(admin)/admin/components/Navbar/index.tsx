@@ -6,7 +6,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <div className="adminNavbar">
-      <div className="logo">
+      <Link href='/' className="logo">
         <Image
           priority
           src="/assets/logo.webp"
@@ -14,7 +14,7 @@ const Navbar = () => {
           width={158}
           height={65}
         />
-      </div>
+      </Link>
       <div className="links">
         <div className="mainLinks">
           <Link href="/admin">Home</Link>

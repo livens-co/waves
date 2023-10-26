@@ -5,12 +5,10 @@
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  padding: 6rem 0;
+  padding: 2rem 0 6rem;
 
   .logo {
-    position: absolute;
-    top: 5%;
-    left: 5%;
+    display: flex;
     height: 3rem;
 
     img {
@@ -22,6 +20,7 @@
   .title {
     h1 {
       font-weight: 500;
+      font-size: 1.75rem;
     }
   }
 

@@ -10,6 +10,7 @@ import Image from "next/image";
 import DestinationPicker from "@/components/DestinationPicker/DestinationPicker";
 import PersonCounter from "@/components/PersonCounter/PersonCounter";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 export const revalidate = 3;
@@ -20,14 +21,14 @@ const BookingPage = () => {
 
   return (
     <div className="bookingPage">
-      <div className="logo">
+      <Link href='/' className="logo">
         <Image
           src="/assets/logo.webp"
           alt="Waves & more"
           width={200}
           height={200}
         />
-      </div>
+      </Link>
       <div className="title">
         <h1>Book your trip</h1>
       </div>
