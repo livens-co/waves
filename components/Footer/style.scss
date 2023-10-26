@@ -11,7 +11,10 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--gap);
 
-    ul {
+    .column {
+      display: flex;
+      flex-direction: column;
+
       h3 {
         margin-bottom: 1rem;
         display: flex;
@@ -23,7 +26,8 @@ footer {
           color: var(--secondaryColor);
         }
       }
-      li {
+      a {
+        width: fit-content;
         margin-left: 1.5rem;
         margin-bottom: 0.25rem;
       }

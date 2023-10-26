@@ -49,19 +49,24 @@ const Menu = ({ openMenu, closeMenu }: MenuProps) => {
           </Link>
         </div>
         <div className="social">
-          <Link href="/">
+          <a href="https://www.instagram.com/waves_more/" target="_blank">
             <InstagramIcon />
             Instagram
-          </Link>
-          <Link href="/">Tik Tok</Link>
-          <Link href="/">
+          </a>
+          <a href="https://www.tiktok.com/@wavesnmore" target="_blank">
+            Tik Tok
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61550552973354"
+            target="_blank"
+          >
             <FacebookIcon />
             Facebook
-          </Link>
-          <Link href="/">
+          </a>
+          {/* <a href="/">
             <LinkedInIcon />
             LinkedIn
-          </Link>
+          </a> */}
         </div>
       </div>
       <div className="container">
