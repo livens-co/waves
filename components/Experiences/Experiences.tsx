@@ -10,7 +10,7 @@ const Experiences = () => {
       <h1>Waves experiences</h1>
       <div className="carousel">
         <button className="nav">
-          <ChevronLeftRoundedIcon />
+          {/* <ChevronLeftRoundedIcon /> */}
         </button>
         <div className="carouselItem">
           <div className="image">
@@ -45,7 +45,7 @@ const Experiences = () => {
           </p>
         </div>
         <button className="nav">
-          <ChevronRightRoundedIcon />
+          {/* <ChevronRightRoundedIcon /> */}
         </button>
       </div>
     </div>

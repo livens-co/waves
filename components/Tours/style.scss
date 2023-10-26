@@ -15,8 +15,8 @@
   }
 
   .tourContainerText {
-   font-size: 1.15rem;
-   text-align: center;
+    font-size: 1.15rem;
+    text-align: center;
     margin-bottom: 2rem;
   }
 
@@ -31,14 +31,18 @@
 
     .tourContainer {
       width: 10rem;
-      aspect-ratio: 1/1;
+      height: 10rem;
+      border-radius: 1.25rem;
       position: relative;
+      overflow: hidden;
 
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 1.25rem;
+        transition: all 300ms ease;
+        overflow: hidden;
       }
 
       .imageOverlay {
@@ -61,72 +65,11 @@
         font-weight: 700;
       }
 
-      
-    }
-
-    
-  }
-
-  .tourListOverlay {
-    position: absolute;
-    width: 52rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    height: 12rem;
-    overflow: hidden;
-
-    
-
-    .waveA {
-      position: absolute;
-      width: 100%;
-      top: 40%;
-      right: 0%;
-      height: 5.5rem;
-      background: url("../../public/assets/wave.png");
-      background-size: 100% 5.5rem;
-      transform: translate(-50%, -50%) scaleX(-1);
-      z-index: 1;
-    }
-
-    .waveB {
-      position: absolute;
-      width: 52rem;
-      top: 40%;
-      left: 50%;
-      // transform: ;
-      height: 5.5rem;
-      background: url("../../public/assets/wave.png");
-      background-size: 52rem 5.5rem;
-      transform: rotate(180deg) scaleX(-1);
-      z-index: 1;
-    }
-
-    .waveC {
-      position: absolute;
-      width: 100%;
-      top: 40%;
-      right: 0%;
-      transform: translate(-50%, -50%);
-      height: 5.5rem;
-      background: url("../../public/assets/wave.png");
-      background-size: 100% 5.5rem;
-      transform: rotate(180deg) scaleX(-1);
-      z-index: 1;
-    }
-
-    .waveD {
-      position: absolute;
-      width: 100%;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%) scaleX(-1);
-      height: 5.5rem;
-      background: url("../../public/assets/wave.png");
-      background-size: 100% 5.5rem;
-      z-index: 1;
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
     }
   }
 

@@ -11,7 +11,7 @@ const Discover = () => {
               Dive into a journey tailored by your aspirations, dreams, and
               senses.
             </p>
-            <Link href="/" className="buttonInvert">
+            <Link href="/tours" className="buttonInvert">
               Discover
             </Link>
           </div>

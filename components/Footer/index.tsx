@@ -15,9 +15,18 @@ const Footer = () => {
             <SendIcon />
             Follow us
           </h3>
-          <a href="https://www.instagram.com/waves_more/" target="_blank">Instagram</a>
-          <a href="https://www.tiktok.com/@wavesnmore" target="_blank">Tik Tok</a>
-          <a href="https://www.facebook.com/profile.php?id=61550552973354" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/waves_more/" target="_blank">
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@wavesnmore" target="_blank">
+            Tik Tok
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61550552973354"
+            target="_blank"
+          >
+            Facebook
+          </a>
           {/* <a href="/" target="_blank">LinkedIn</a> */}
         </div>
         <div className="column">
@@ -42,10 +51,9 @@ const Footer = () => {
             <SailingOutlinedIcon />
             Best tours
           </h3>
-          <Link href='/tours/captivating-korcula'>Captivating Korčula</Link>
-          <Link href='/tours/hvar-odyssey'>Hvar Odyssey</Link>
-          <Link href='/tours/vibrant-vis'>Vibrant Vis</Link>
-          
+          <Link href="/tours/captivating-korcula">Captivating Korčula</Link>
+          <Link href="/tours/hvar-odyssey">Hvar Odyssey</Link>
+          <Link href="/tours/vibrant-vis">Vibrant Vis</Link>
         </div>
       </div>
       <div className="bottom">
@@ -64,8 +72,7 @@ const Footer = () => {
         </p>
 
         <div className="legal">
-          <Link href="/">Privacy Policy</Link>
-          <Link href="/">Terms & Conditions</Link>
+          <Link href="/terms-and-conditions">Terms & Conditions</Link>
         </div>
       </div>
     </footer>
