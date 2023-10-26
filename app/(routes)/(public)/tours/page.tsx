@@ -8,6 +8,15 @@ const ToursPage = () => {
   return (
     <>
       <div className="toursPage">
+        <Link href="/" className="logo">
+          <Image
+            priority
+            src="/assets/logo.webp"
+            alt="Waves&More Logo"
+            width={200}
+            height={75}
+          />
+        </Link>
         <header>
           <h1>
             <span>Explore Croatia&apos;s Coastal Gems: </span>
@@ -16,22 +25,27 @@ const ToursPage = () => {
           </h1>
         </header>
         <div className="toursGrid">
-          {data.locations.map((tour) => (
-            <Link
-              href={`/tours/${tour.href}`}
-              key={tour.href}
-              className="tourContainer"
-            >
-              <Image
-                src={tour.image}
-                alt={tour.name}
-                width={256}
-                height={160}
-              />
-              <div className="imageOverlay" />
-              <p>{tour.name}</p>
-            </Link>
-          ))}
+          {data.locations
+            .map((tour) => (
+              <div className="tourRow" key={tour.href}>
+                <div className="rowImage">
+                  <Link href={`/tours/${tour.href}`} className="tourContainer">
+                    <Image
+                      src={tour.image}
+                      alt={tour.name}
+                      width={256}
+                      height={160}
+                    />
+                    <div className="imageOverlay" />
+                    <p>{tour.name}</p>
+                  </Link>
+                </div>
+                <div className="tourSummary">
+                  <p>{tour.summary}</p>
+                </div>
+              </div>
+            ))
+            .splice(0, 7)}
         </div>
         <div className="backgroundImage">
           <Image
@@ -69,3 +83,20 @@ const ToursPage = () => {
 };
 
 export default ToursPage;
+
+// {data.locations.map((tour) => (
+//   <Link
+//     href={`/tours/${tour.href}`}
+//     key={tour.href}
+//     className="tourContainer"
+//   >
+//     <Image
+//       src={tour.image}
+//       alt={tour.name}
+//       width={256}
+//       height={160}
+//     />
+//     <div className="imageOverlay" />
+//     <p>{tour.name}</p>
+//   </Link>
+// ))}
