@@ -12,6 +12,32 @@ const Footer = () => {
       <div className="links">
         <div className="column">
           <h3>
+            <SailingOutlinedIcon />
+            Best tours
+          </h3>
+          <Link href="/tours/captivating-korcula">Captivating Korčula</Link>
+          <Link href="/tours/hvar-odyssey">Hvar Odyssey</Link>
+          <Link href="/tours/vibrant-vis">Vibrant Vis</Link>
+        </div>
+        <div className="column">
+          <h3>
+            <LocalPhoneOutlinedIcon />
+            Contact us
+          </h3>
+          <a href="mailto:reservations@waves.hr">reservations@waves.hr</a>
+          <a href="tel:+385953700141">+385 95 3700 141</a>
+        </div>
+        <div className="column">
+          <h3>
+            <LocationOnOutlinedIcon />
+            Find us
+          </h3>
+          <p>Marina Zenta</p>
+          <p>Obala Lazareta bb</p>
+          <p>21 000 Split, Croatia</p>
+        </div>
+        <div className="column">
+          <h3>
             <SendIcon />
             Follow us
           </h3>
@@ -28,32 +54,6 @@ const Footer = () => {
             Facebook
           </a>
           {/* <a href="/" target="_blank">LinkedIn</a> */}
-        </div>
-        <div className="column">
-          <h3>
-            <LocationOnOutlinedIcon />
-            Find us
-          </h3>
-          <p>Marina Zenta</p>
-          <p>Obala Lazareta bb</p>
-          <p>21 000 Split, Croatia</p>
-        </div>
-        <div className="column">
-          <h3>
-            <LocalPhoneOutlinedIcon />
-            Contact us
-          </h3>
-          <a href="mailto:reservations@waves.hr">reservations@waves.hr</a>
-          <a href="tel:+385953700141">+385 95 3700 141</a>
-        </div>
-        <div className="column">
-          <h3>
-            <SailingOutlinedIcon />
-            Best tours
-          </h3>
-          <Link href="/tours/captivating-korcula">Captivating Korčula</Link>
-          <Link href="/tours/hvar-odyssey">Hvar Odyssey</Link>
-          <Link href="/tours/vibrant-vis">Vibrant Vis</Link>
         </div>
       </div>
       <div className="bottom">
