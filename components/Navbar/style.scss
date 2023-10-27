@@ -2,7 +2,7 @@ nav {
   position: fixed;
   right: 5%;
   top: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -5%);
   z-index: 100;
 
   .menuButton {
@@ -25,5 +25,13 @@ nav {
       background-color: var(--overlay);
       border-radius: 0.5rem;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    top: 5%;
+    transform: none;
+
   }
 }
