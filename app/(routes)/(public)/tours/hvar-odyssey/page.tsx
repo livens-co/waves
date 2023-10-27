@@ -90,23 +90,23 @@ const HvarOdyssey = () => {
               into the island&apos;s dramatic past.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/hvar-odyssey/1.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/hvar-odyssey/2.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/hvar-odyssey/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/hvar-odyssey/3.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/hvar-odyssey/4.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/hvar-odyssey/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -140,13 +140,13 @@ const HvarOdyssey = () => {
               epilogue to your extended Hvar odyssey.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/hvar-odyssey/5.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/hvar-odyssey/6.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/hvar-odyssey/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

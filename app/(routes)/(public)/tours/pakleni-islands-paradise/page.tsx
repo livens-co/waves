@@ -90,39 +90,23 @@ const PakleniIslandsParadise = () => {
               symphony of relaxation.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image
-                src="/assets/pakleni-islands-paradise/1.jpeg"
-                fill
-                alt=""
-              />
-            </div>
-            <div className="image2">
-              <Image
-                src="/assets/pakleni-islands-paradise/3.jpeg"
-                fill
-                alt=""
-              />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/pakleni-islands-paradise/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image
-                src="/assets/pakleni-islands-paradise/4.jpeg"
-                fill
-                alt=""
-              />
-            </div>
-            <div className="image2">
-              <Image
-                src="/assets/pakleni-islands-paradise/5.jpeg"
-                fill
-                alt=""
-              />
-            </div>
+        <div className="containerImage">
+            <Image
+              src="/assets/pakleni-islands-paradise/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -158,21 +142,13 @@ const PakleniIslandsParadise = () => {
               enchanted.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image
-                src="/assets/pakleni-islands-paradise/6.jpeg"
-                fill
-                alt=""
-              />
-            </div>
-            <div className="image2">
-              <Image
-                src="/assets/pakleni-islands-paradise/7.jpeg"
-                fill
-                alt=""
-              />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/pakleni-islands-paradise/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

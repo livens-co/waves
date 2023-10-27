@@ -91,23 +91,23 @@ const BreathtakingBrac = () => {
               vibrant community.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/breathtaking-brac/13.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/breathtaking-brac/14.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/breathtaking-brac/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/breathtaking-brac/15.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/breathtaking-brac/16.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/breathtaking-brac/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -143,13 +143,13 @@ const BreathtakingBrac = () => {
               island&apos;s spiritual and natural essence.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/breathtaking-brac/17.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/breathtaking-brac/18.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/breathtaking-brac/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

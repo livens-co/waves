@@ -91,23 +91,23 @@ const SoltaSojourn = () => {
               bounties.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/solta-sojourn/1.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/solta-sojourn/2.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/solta-sojourn/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/solta-sojourn/3.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/solta-sojourn/4.jpeg" fill alt="" />
-            </div>
+        <div className="containerImage">
+            <Image
+              src="/assets/solta-sojourn/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -139,13 +139,13 @@ const SoltaSojourn = () => {
               reflect, and revel in the untouched beauty of Šolta.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/solta-sojourn/5.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/solta-sojourn/6.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/solta-sojourn/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

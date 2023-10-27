@@ -89,23 +89,24 @@ const DrvenikDelights = () => {
               rhythms of the sea.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/drvenik-delights/4.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/drvenik-delights/5.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/drvenik-delights/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
+          
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/drvenik-delights/6.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/drvenik-delights/1.jpeg" fill alt="" />
-            </div>
+        <div className="containerImage">
+            <Image
+              src="/assets/drvenik-delights/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -139,13 +140,13 @@ const DrvenikDelights = () => {
               unforgettable tapestry.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/drvenik-delights/2.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/drvenik-delights/3.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/drvenik-delights/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

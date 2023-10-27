@@ -88,23 +88,23 @@ const VibrantVis = () => {
               of bygone eras and maritime legacies.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/vibrant-vis/1.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/vibrant-vis/2.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/vibrant-vis/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/vibrant-vis/3.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/vibrant-vis/4.jpeg" fill alt="" />
-            </div>
+        <div className="containerImage">
+            <Image
+              src="/assets/vibrant-vis/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -140,13 +140,13 @@ const VibrantVis = () => {
               a symphony of experiences that linger long after the voyage ends.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/vibrant-vis/5.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/vibrant-vis/6.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/vibrant-vis/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

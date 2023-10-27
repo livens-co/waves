@@ -90,23 +90,23 @@ const CaptivatingKorcula = () => {
               world&apos;s hustle.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/captivating-korcula/2.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/captivating-korcula/3.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/captivating-korcula/group/g1.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
         <div className="tripContainer">
-          <div className="imagesL">
-            <div className="image1">
-              <Image src="/assets/captivating-korcula/4.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/captivating-korcula/5.jpeg" fill alt="" />
-            </div>
+        <div className="containerImage">
+            <Image
+              src="/assets/captivating-korcula/group/g2.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
           <div className="text">
             <h1>
@@ -139,13 +139,13 @@ const CaptivatingKorcula = () => {
               journey that captures the essence of the Adriatic&apos;s magic.
             </p>
           </div>
-          <div className="imagesR">
-            <div className="image1">
-              <Image src="/assets/captivating-korcula/6.jpeg" fill alt="" />
-            </div>
-            <div className="image2">
-              <Image src="/assets/captivating-korcula/7.jpeg" fill alt="" />
-            </div>
+          <div className="containerImage">
+            <Image
+              src="/assets/captivating-korcula/group/g3.png"
+              width={500}
+              height={500}
+              alt=""
+            />
           </div>
         </div>
       </div>

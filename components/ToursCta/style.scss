@@ -1,7 +1,6 @@
 .toursCta {
   width: 50rem;
   margin: 4rem 5%;
-  // margin: 4rem auto;
   display: flex;
   position: relative;
   height: 23rem;
@@ -11,10 +10,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    // flex: 2;
-    // display: flex;
-    // position: relative;
-    // justify-content: flex-end;
+   
 
     img {
       position: relative;
@@ -32,18 +28,18 @@
       background: rgb(7, 20, 36);
       background: -moz-linear-gradient(
         160deg,
-        rgba(7, 20, 36, 0.20073967086834732) 0%,
-        rgba(7, 20, 36, 0.6993391106442577) 80%
+        rgba(7, 20, 36, 0.3) 0%,
+        rgba(7, 20, 36, 0.8) 60%
       );
       background: -webkit-linear-gradient(
         160deg,
-        rgba(7, 20, 36, 0.20073967086834732) 0%,
-        rgba(7, 20, 36, 0.6993391106442577) 80%
+        rgba(7, 20, 36, 0.3) 0%,
+        rgba(7, 20, 36, 0.8) 60%
       );
       background: linear-gradient(
         160deg,
-        rgba(7, 20, 36, 0.20073967086834732) 0%,
-        rgba(7, 20, 36, 0.6993391106442577) 80%
+        rgba(7, 20, 36, 0.3) 0%,
+        rgba(7, 20, 36, 0.8) 60%
       );
     }
   }
@@ -85,6 +81,64 @@
 
         &:nth-child(2) {
           color: var(--primaryColor);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .toursCta {
+    width: 90%;
+    height: 20rem;
+
+    .imagesContainer {
+      img {
+        height: 20rem;
+      }
+    }
+    .ctaContent {
+      gap: 1.5rem;
+      h2 {
+        text-align: end;
+        align-self: flex-end;
+        padding: 0;
+      }
+
+      a {
+        align-self: flex-end;
+        margin: 0;
+      }
+
+      .title {
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .toursCta{
+    height: 14rem;
+    margin: 2rem 5%;
+    .imagesContainer{
+
+      img {
+        height: 14rem;
+      }
+      
+    }
+
+    .ctaContent{
+    
+      h2{
+        font-size: 1rem;
+      }
+
+      .title{
+        p{
+          font-size: 1.25rem;
+          text-align: end;
         }
       }
     }
