@@ -404,7 +404,7 @@
       .line {
         height: 100%;
         width: 0.1rem;
-        // background-color: var(--secondary);
+       display: block;
         position: absolute;
         top: 0;
         left: 50%;
@@ -618,6 +618,7 @@
 
     .tripItinerary {
       gap: 1rem;
+
       .grid {
         display: flex;
         flex-direction: column;
