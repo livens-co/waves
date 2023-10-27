@@ -8,11 +8,11 @@ export default function PublicLayout({
 }) {
   return (
     <>
-     {/* <div className="publicLayout"> */}
+     <div className="publicLayout">
       <Navbar />
       {children}
       <Footer />
-     {/* </div> */}
+     </div>
     </>
   );
 }

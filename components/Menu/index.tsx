@@ -19,7 +19,7 @@ const Menu = ({ openMenu, closeMenu }: MenuProps) => {
     <div
       className="menu"
       style={{
-        right: openMenu ? "0" : "-100vw",
+        right: openMenu ? "0" : "-100%",
         transitionDelay: openMenu ? "0s" : "0.15s",
       }}
     >
