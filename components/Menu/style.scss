@@ -7,15 +7,20 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  transition: right 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: right 700ms cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
+  align-items: center;
   padding: 5%;
+
+  .logoMobile {
+    display: none;
+  }
 
   .backgroundImage {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     z-index: -1;
 
@@ -28,18 +33,18 @@
       background: rgb(7, 20, 36);
       background: -moz-linear-gradient(
         90deg,
-        rgba(7, 20, 36, 1) 4%,
-        rgba(7, 20, 36, 0.3) 100%
+        rgba(7, 20, 36, 1) 10%,
+        rgba(7, 20, 36, 0.5) 80%
       );
       background: -webkit-linear-gradient(
         90deg,
-        rgba(7, 20, 36, 1) 4%,
-        rgba(7, 20, 36, 0.3) 100%
+        rgba(7, 20, 36, 1) 10%,
+        rgba(7, 20, 36, 0.5) 80%
       );
       background: linear-gradient(
         90deg,
-        rgba(7, 20, 36, 1) 4%,
-        rgba(7, 20, 36, 0.3) 100%
+        rgba(7, 20, 36, 1) 10%,
+        rgba(7, 20, 36, 0.5) 80%
       );
     }
 
@@ -50,23 +55,9 @@
     }
   }
 
-  .closeButton {
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    transition: all 300ms ease;
-    color: var(--primaryColor);
-
-    &:hover {
-      color: var(--secondaryColor);
-    }
-  }
-
   .container {
-    flex: 3;
-    height: 100%;
+    flex: 1;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,20 +66,21 @@
     &:last-child {
       flex: 1;
       height: 100%;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
     }
 
     .logo {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 6rem;
       display: flex;
       align-items: center;
       justify-content: flex-end;
 
       img {
+        height: 100%;
         width: auto;
-        height: 6rem;
+        // object-fit: cover;
       }
     }
 
@@ -98,14 +90,46 @@
       flex-direction: column;
       justify-content: space-between;
 
+      .mobileLinks {
+        display: none;
+      }
+
       .mainLinks {
+        // display: flex;
+        // flex-direction: column;
+        // gap: 0.5rem;
+        // font-size: 2.5rem;
+        // line-height: 1.2;
+        // cursor: pointer;
+        flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        font-size: 2.5rem;
-        line-height: 1.2;
-        cursor: pointer;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        width: 100%;
 
+        .menuLink {
+          margin: 0.25rem 0;
+          position: relative;
+
+          .link {
+            color: var(--primaryColor);
+            font-size: 2.25rem;
+            font-weight: 400;
+            position: relative;
+            top: 0;
+            transition: none;
+          }
+          &:nth-child(4) {
+            color: var(--secondaryColor) !important;
+            margin-top: 3rem;
+          }
+
+          .menuLinkWrapper::after {
+            display: none;
+          }
+        }
       }
 
       .menuBookNow {
@@ -116,7 +140,9 @@
     }
 
     .social {
+      width: fit-content;
       display: flex;
+      flex-wrap: wrap;
       gap: 1.5rem;
 
       a {
@@ -137,7 +163,102 @@
           }
         }
       }
+    }
+  }
+}
 
+@media screen and (max-width: 800px) {
+  .menu {
+    .logoMobile {
+      position: absolute;
+      top: 1.5rem;
+      left: 5%;
+
+      display: flex;
+
+      img {
+        width: auto;
+        height: 4rem;
+      }
+    }
+    .backgroundImage {
+      display: none;
+    }
+    .container {
+      &:last-child {
+        display: none;
+      }
+      .navigation {
+        .mainLinks {
+          display: none;
+        }
+        .mobileLinks {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          height: 100vh;
+          width: 100%;
+
+          .menuLink {
+            margin: 0.25rem 0;
+            position: relative;
+
+            .link {
+              color: var(--primaryColor);
+              font-size: 2.25rem;
+              font-weight: 400;
+              position: relative;
+              top: 0;
+              transition: none;
+              transition: top 2s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            &:last-child {
+              margin-top: 3rem;
+
+              a {
+                color: var(--secondaryColor) !important;
+              }
+            }
+            .menuLinkWrapper::after {
+              display: block;
+              content: "";
+              position: absolute;
+              top: 100px;
+              left: -10%;
+              width: 120%;
+              height: 100%;
+              background: var(--backgroundColor);
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .menuBookNow {
+          display: none;
+        }
+      }
+      .social {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .menu {
+    .container {
+      .navigation {
+        .mobileLinks {
+          .menuLink {
+            .link {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
     }
   }
 }
