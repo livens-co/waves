@@ -2,36 +2,65 @@ nav {
   position: fixed;
   display: flex;
   right: 5%;
-  top: 50%;
-  transform: translate(-50%, -5%);
+  top: 2rem;
+  // transform: translate(-50%, -5%);
   z-index: 1000;
   // overflow: hidden;
 
   
 
-  .menuButton {
-    // position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-    padding: 0.75rem;
-    cursor: pointer;
-    transition: all 300ms ease;
-    z-index: 1000;
+    .menuButton {
+      height: 1.5rem;
+      width: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      cursor: pointer;
+     
 
-    .dot {
-      height: 0.5rem;
-      width: 0.5rem;
-      background-color: white;
-      border-radius: 50%;
-    }
+      .line {
+        // width: 100%;
+        height: 4px;
+        background-color: var(--primaryColor);
+        border-radius: 1rem;
+        transition: 200ms all ease;
+      }
 
-    &:hover {
-      background-color: var(--overlay);
-      border-radius: 0.5rem;
+      &:hover {
+        .line {
+          width: 100% !important;
+
+          &:nth-child(2) {
+            background-color: var(--secondaryColor);
+          }
+        }
+      }
     }
-  }
+  
+  // .menuButton {
+  //   // position: fixed;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   gap: 0.25rem;
+  //   padding: 0.75rem;
+  //   cursor: pointer;
+  //   transition: all 300ms ease;
+  //   z-index: 1000;
+
+  //   .dot {
+  //     height: 0.5rem;
+  //     width: 0.5rem;
+  //     background-color: white;
+  //     border-radius: 50%;
+  //   }
+
+  //   &:hover {
+  //     background-color: var(--overlay);
+  //     border-radius: 0.5rem;
+  //   }
+  // }
 }
 
 @media screen and (max-width: 500px) {
