@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  padding: 4rem 5% 6rem;
+  padding: 4rem 5%;
 
   .logo {
     img {
@@ -37,7 +37,7 @@
     // flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    gap: 2rem;
 
     .tourRow {
       display: flex;
@@ -46,9 +46,7 @@
       .rowImage {
         flex: 2;
         display: flex;
-        // justify-content: flex-end;
         align-items: center;
-        margin-left: 2rem;
 
         .tourContainer {
           width: 22rem;
@@ -98,17 +96,21 @@
       .tourSummary {
         flex: 3;
         display: flex;
-        padding: 2rem;
+        padding: 2rem 0 2rem 2rem;
         align-items: center;
 
         p {
-          width: 90%;
+          width: 100%;
           line-height: 1.6;
         }
       }
 
       &:nth-child(2n) {
         flex-direction: row-reverse;
+
+        .tourSummary {
+          padding: 2rem 2rem 2rem 0;
+        }
 
         .rowImage {
           justify-content: flex-start;
@@ -404,7 +406,7 @@
       .line {
         height: 100%;
         width: 0.1rem;
-       display: block;
+        display: block;
         position: absolute;
         top: 0;
         left: 50%;
@@ -534,6 +536,40 @@
       }
     }
   }
+
+  .toursPage {
+    .toursGrid {
+      width: 100%;
+      .tourRow {
+        flex-direction: column;
+
+        .rowImage {
+          align-self: center;
+        }
+
+        &:nth-child(2n) {
+          flex-direction: column;
+        }
+
+        .tourSummary {
+          padding: 2rem 0 !important;
+        }
+      }
+    }
+    .customTours {
+      flex-direction: column;
+
+      .tourText {
+        p {
+          margin-top: 1rem;
+          text-align: center;
+        }
+      }
+      .customTourCta {
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -568,6 +604,21 @@
       .grid {
         width: 90%;
       }
+    }
+  }
+
+  .toursPage {
+    gap: 2rem;
+    header {
+      h1 {
+        width: 90%;
+        font-size: 1.75rem;
+      }
+    }
+
+    .customTours {
+      width: 90%;
+      padding: 2rem;
     }
   }
 }
@@ -646,6 +697,45 @@
 
     .moreTrips {
       padding: 1rem 5%;
+    }
+  }
+
+  .toursPage {
+    // gap: 2rem;
+    header {
+      h1 {
+        font-size: 1.25rem;
+      }
+    }
+    .toursGrid {
+      padding: 2rem 0 0;
+      .tourRow {
+        .rowImage {
+          .tourContainer {
+            width: 16rem;
+            height: 10rem;
+
+            p {
+              font-size: 1.15rem;
+            }
+          }
+        }
+      }
+    }
+
+    .customTours {
+      width: 100%;
+      padding: 0;
+      .tourText {
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+          margin-top: 1rem;
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
     }
   }
 }

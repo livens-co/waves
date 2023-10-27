@@ -72,31 +72,8 @@ const ToursPage = () => {
           </div>
         </div>
       </div>
-      <div className="toursBottom">
-        <div className="wave wave1" />
-        <div className="wave wave2" />
-        <div className="wave wave3" />
-        <div className="wave wave4" />
-      </div>
     </>
   );
 };
 
 export default ToursPage;
-
-// {data.locations.map((tour) => (
-//   <Link
-//     href={`/tours/${tour.href}`}
-//     key={tour.href}
-//     className="tourContainer"
-//   >
-//     <Image
-//       src={tour.image}
-//       alt={tour.name}
-//       width={256}
-//       height={160}
-//     />
-//     <div className="imageOverlay" />
-//     <p>{tour.name}</p>
-//   </Link>
-// ))}
