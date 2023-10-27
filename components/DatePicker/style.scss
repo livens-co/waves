@@ -48,13 +48,13 @@
       border: 1px solid #868686;
     }
   }
-  
+
   .disabled {
     color: #eeeeee6d;
     pointer-events: none;
     border: 1px solid transparent;
   }
-  
+
   .active {
     background-color: rgba(0, 170, 255, 0.4);
     border: 1px solid var(--secondaryColor);
@@ -63,11 +63,16 @@
   }
 }
 
-
 button:disabled {
   cursor: auto;
 
   svg {
     color: #eeeeee6d;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .datePicker {
+    width: 90%;
   }
 }

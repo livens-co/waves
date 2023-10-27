@@ -93,14 +93,14 @@ const PersonalInfoPage = () => {
 
   return (
     <div className="personalInfoPage">
-      <div className="logo">
+      <Link href='/' className="logo">
         <Image
           src="/assets/logo.webp"
           alt="Waves & more"
           width={200}
           height={200}
         />
-      </div>
+      </Link>
       <div className="title">
         <Link href="/booking">
           <ArrowBackRoundedIcon />
