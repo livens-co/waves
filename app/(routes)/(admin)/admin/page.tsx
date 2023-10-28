@@ -1,6 +1,5 @@
 import prismadb from "@/lib/prismadb";
 
-
 const DashboardPage = async () => {
   const user = await prismadb.user.findFirst();
 
@@ -8,12 +7,7 @@ const DashboardPage = async () => {
     return <div>No User found</div>;
   }
 
-  return (
-    <div>
-      Current user: {user?.name}
-      
-    </div>
-  );
+  return <div>Admin</div>;
 };
 
 export default DashboardPage;

@@ -89,7 +89,7 @@ const PersonalInfoPage = () => {
     window.location = response.data.url;
   };
 
-  const formattedDate = format(date, "ccc, dd.MM.yyyy.");
+  const formattedDate = format(date, "cccc, dd.MM.yyyy.");
 
   return (
     <div className="personalInfoPage">
