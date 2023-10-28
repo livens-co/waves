@@ -1,4 +1,6 @@
 import * as React from "react";
+import { format, parseISO } from "date-fns";
+import { utcToZonedTime, format as tzFormat } from "date-fns-tz";
 
 interface ConfirmationTemplateProps {
   firstName: string;
@@ -24,7 +26,13 @@ export const ConfirmationTemplate: React.FC<
   numberOfPeople,
   userNotes,
   bookingId,
-}) => (
+}) => {
+  const timeZone = "Europe/Berlin"; // Replace with the correct time zone, e.g., "Europe/Berlin"
+
+  const dateObj = parseISO(date);
+  const zonedDate = utcToZonedTime(dateObj, timeZone);
+  const formattedDate = tzFormat(zonedDate, "cccc, dd.MM.yyyy", { timeZone });
+  return(
   <div
     style={{
       width: "100%",
@@ -86,7 +94,7 @@ export const ConfirmationTemplate: React.FC<
           </li>
           <li>
             <span>Date: </span>
-            {date}
+            {formattedDate}
           </li>
           <li>
             <span>Number of people: </span>
@@ -103,4 +111,4 @@ export const ConfirmationTemplate: React.FC<
       </p>
     </div>
   </div>
-);
+)};

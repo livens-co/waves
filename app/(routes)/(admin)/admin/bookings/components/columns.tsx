@@ -39,10 +39,7 @@ export const columns: ColumnDef<BookingColumn>[] = [
     accessorKey: "paid",
     header: "Desposit",
   },
-  {
-    accessorKey: "createdAt",
-    header: "created",
-  },
+ 
   {
     id: "actions",
     cell: ({ row }) => <CellAction data={row.original} />,
