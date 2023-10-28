@@ -3,6 +3,7 @@ import "./style.scss";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { format, parseISO } from "date-fns";
+import { utcToZonedTime, format as tzFormat } from "date-fns-tz";
 
 interface BookingDetailsPageProps {
   params: {
@@ -21,9 +22,14 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
     notFound();
   }
 
+  // const isoDate = booking.date;
+  // const dateObj = parseISO(isoDate);
+  // const formattedDate = format(dateObj, "cccc, dd.MM.yyyy.");
   const isoDate = booking.date;
-  const dateObj = parseISO(isoDate);;
-  const formattedDate = format(dateObj, "cccc, dd.MM.yyyy.");
+const dateObj = parseISO(isoDate);
+const timeZone = "Europe/Berlin"; // Replace with the correct time zone, e.g., "Europe/Berlin"
+const zonedDate = utcToZonedTime(dateObj, timeZone); // Convert to the desired time zone
+const formattedDate = tzFormat(zonedDate, "cccc, dd.MM.yyyy", { timeZone }); // Format the date
 
   return (
     <div className="bookingDetailsPage">
