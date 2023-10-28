@@ -3,6 +3,7 @@ import "./style.scss";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { format, parseISO } from "date-fns";
+import { parse } from "path";
 
 interface BookingDetailsPageProps {
   params: {
@@ -21,9 +22,9 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
     notFound();
   }
 
-  const parsedDate = parseISO(booking.date);
-
-  const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
+  const isoDate = booking.date;
+  const dateObj = new Date(isoDate);
+  const formattedDate = format(dateObj, "cccc, dd.MM.yyyy.");
 
   return (
     <div className="bookingDetailsPage">
@@ -53,10 +54,10 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
               <span>Destination: </span>
               {booking.destination}
             </p>
-            {/* <p>
+            <p>
               <span>Date: </span>
               {formattedDate}
-            </p> */}
+            </p>
             <p>
               <span>Group size: </span>
               {booking.numberOfPeople}
