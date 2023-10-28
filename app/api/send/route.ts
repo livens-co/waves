@@ -1,8 +1,9 @@
 import { ConfirmationTemplate } from "@/components/EmailTemplates/ConfirmationTemplate";
 import { ContactTemplate } from "@/components/EmailTemplates/ContactTemplate";
-import { format, parseISO } from "date-fns";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { parseISO } from "date-fns";
+import { utcToZonedTime, format as tzFormat } from "date-fns-tz";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -23,11 +24,18 @@ export async function POST(req: Request) {
 
     
 
-    // Parse the date string into a Date object using parseISO
-    const parsedDate = parseISO(date);
+   // Specify the time zone
+   const timeZone = "Europe/Berlin";
 
-    // Format the date as needed
-    const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
+   // Parse the date string into a Date object using parseISO
+   const dateObj = parseISO(date);
+
+   // Convert to the desired time zone
+   const zonedDate = utcToZonedTime(dateObj, timeZone);
+
+   // Format the date as needed
+   const formattedDate = tzFormat(zonedDate, "cccc, dd.MM.yyyy", { timeZone });
+
 
     let reactElement;
 
