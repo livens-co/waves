@@ -21,7 +21,9 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
     notFound();
   }
 
-  const formattedDate = format(new Date(booking.date), "cccc, dd.MM.yyyy.");
+  const parsedDate = parseISO(booking.date);
+
+  const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
 
   return (
     <div className="bookingDetailsPage">
