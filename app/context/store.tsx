@@ -57,6 +57,8 @@ export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
   const [phone, setPhone] = useState<string>("");
   const [userNotes, setUserNotes] = useState<string>("");
 
+  console.log(date)
+
   const contextValue = {
     destination,
     setDestination,

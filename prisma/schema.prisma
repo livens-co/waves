@@ -25,7 +25,7 @@ model Booking {
   lastName       String
   email          String
   phone          String
-  date           DateTime
+  date           String
   destination    String
   numberOfPeople Int
   userNotes      String?  @db.LongText

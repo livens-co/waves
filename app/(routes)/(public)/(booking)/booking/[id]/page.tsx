@@ -22,7 +22,7 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
   }
 
   const isoDate = booking.date;
-  const dateObj = new Date(isoDate);
+  const dateObj = parseISO(isoDate);;
   const formattedDate = format(dateObj, "cccc, dd.MM.yyyy.");
 
   return (

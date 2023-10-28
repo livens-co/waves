@@ -33,14 +33,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 const formSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1),
   email: z.string().min(1),
   phone: z.string().min(1),
-  date: z.coerce.date(),
+  // date: z.coerce.date(),
+  date: z.string(),
   destination: z.string().min(1),
   numberOfPeople: z.coerce.number().min(1),
   userNotes: z.string().optional(),
@@ -75,24 +76,30 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
           price: parseFloat(String(initialData?.price)) || undefined,
           userNotes: initialData?.userNotes || undefined,
           adminNotes: initialData?.adminNotes || undefined,
-          date: initialData?.date ? new Date(initialData.date) : new Date(),
+          // date: initialData?.date ? new Date(initialData.date) : new Date(),
+          // date: initialData?.date ? parseISO(initialData.date) : new Date(),
         }
       : {
           firstName: "",
           lastName: "",
           email: "",
           phone: "",
-          date: new Date(),
+          // date: new Date(),
+          date: new Date().toISOString(), // Convert to a string
           destination: "",
           numberOfPeople: 1,
           paid: false,
-         
         },
   });
 
   const onSubmit = async (data: BookingFormValues) => {
     try {
       setLoading(true);
+
+      // Convert the date back to a string before submitting
+      // data.date = data.date.toISOString();
+      data.date = parseISO(data.date).toISOString();
+
       if (initialData) {
         await axios.patch(`/api/bookings/${params.id}`, data);
       } else {
@@ -123,7 +130,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
     }
   };
 
-  console.log(initialData?.date)
+  console.log(initialData?.date);
 
   return (
     <>
@@ -220,7 +227,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                 <FormItem>
                   <FormLabel>Date</FormLabel>
                   <FormControl>
-                  
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
@@ -232,8 +238,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                             )}
                           >
                             {field.value ? (
-                              format(field.value, "ccc, dd.MM.yyyy.")
+                              format(parseISO(field.value), "ccc, dd.MM.yyyy.") // Parse the string to Date here
                             ) : (
+                              // format(field.value, "ccc, dd.MM.yyyy.")
                               <span>Pick a date</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -243,8 +250,14 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
                           mode="single"
-                          selected={field.value}
-                          onSelect={field.onChange}
+                          // selected={field.value}
+                          // onSelect={field.onChange}
+                          selected={
+                            field.value ? parseISO(field.value) : undefined
+                          } // Pass `undefined` instead of `null`
+                          onSelect={(date) =>
+                            field.onChange(date ? date.toISOString() : "")
+                          } // Convert the selected date back to a string or empty string
                           disabled={(date) => date < new Date()}
                           initialFocus
                         />
@@ -330,7 +343,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="userNotes"

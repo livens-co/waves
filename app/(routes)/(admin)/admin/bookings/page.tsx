@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 import prismadb from "@/lib/prismadb";
 import { BookingColumn } from "./components/columns";
@@ -20,7 +20,8 @@ const BookingsPage = async () => {
     email: item.email,
     firstName: item.firstName,
     lastName: item.lastName,
-    date: format(item.date, "cccc, dd.MM.yyyy."),
+    // date: format(item.date, "cccc, dd.MM.yyyy."),
+    date: format(parseISO(item.date), "cccc, dd.MM.yyyy."),
     // date: item.date.toLocaleDateString('en-DE', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' }),
     // date: item.date.toDateString(),
     destination: item.destination,
