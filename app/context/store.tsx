@@ -16,8 +16,8 @@ type Props = {
 interface ContextProps {
   destination: string;
   setDestination: Dispatch<SetStateAction<string>>;
-  date: Date;
-  setDate: Dispatch<SetStateAction<Date>>;
+  date: string;
+  setDate: Dispatch<SetStateAction<string>>;
   numberOfPeople: number;
   setNumberOfPeople: Dispatch<SetStateAction<number>>;
   firstName: string;
@@ -36,11 +36,19 @@ const GlobalContext = createContext<ContextProps | undefined>(undefined);
 
 export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
   const [destination, setDestination] = useState<string>("");
-  const [date, setDate] = useState<Date>(() => {
+  // const [date, setDate] = useState<string>(() => {
+  //   const today = new Date();
+  //   const tomorrow = new Date(today);
+  //   tomorrow.setDate(today.getDate() + 1);
+  //   return tomorrow;
+  // });
+  const [date, setDate] = useState<string>(() => {
+    // Initialize date as a string with the desired format
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
-    return tomorrow;
+    const formattedDate = tomorrow.toISOString();  // Convert to ISO 8601 string
+    return formattedDate;
   });
   const [numberOfPeople, setNumberOfPeople] = useState<number>(1);
   const [firstName, setFirstName] = useState<string>("");

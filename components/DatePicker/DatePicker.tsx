@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./style.scss";
 
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
@@ -11,9 +11,15 @@ const DatePicker = () => {
   const today = new Date();
 
   const { date, setDate } = useGlobalContext();
+  // const dateObj = new Date(date); // Parse the date string into a Date object
+  const dateObj = useMemo(() => new Date(date), [date]); 
 
-  const [month, setMonth] = useState(date.getMonth());
-  const [year, setYear] = useState(date.getFullYear());
+  const [month, setMonth] = useState(dateObj.getMonth());
+  const [year, setYear] = useState(dateObj.getFullYear());
+
+
+  // const [month, setMonth] = useState(date.getMonth());
+  // const [year, setYear] = useState(date.getFullYear());
 
   const getDaysInMonth = (month: number, year: number) =>
     new Date(year, month + 1, 0).getDate();
@@ -43,15 +49,25 @@ const DatePicker = () => {
     }
   };
 
-  const handleDateChange = (newDate: Date | ((prevDate: Date) => Date)) => {
-    setDate(newDate as Date);
+  // const handleDateChange = (newDate: Date | ((prevDate: Date) => Date)) => {
+  //   setDate(newDate as Date);
+  // };
+  const handleDateChange = (newDate: Date) => {
+    // Format the new date as a string and update the context
+    const newDateString = newDate.toISOString();
+    setDate(newDateString);
   };
 
+  // useEffect(() => {
+  //   setMonth(date.getMonth());
+  //   setYear(date.getFullYear());
+  // }, [date]);
   useEffect(() => {
-    setMonth(date.getMonth());
-    setYear(date.getFullYear());
-  }, [date]);
+    setMonth(dateObj.getMonth());
+    setYear(dateObj.getFullYear());
+  }, [dateObj]);
 
+  console.log(dateObj)
 
   return (
     <div className="datePicker">
@@ -85,7 +101,7 @@ const DatePicker = () => {
             key={index}
             className={`day ${
               new Date(year, month, index + 1).toDateString() ===
-              date.toDateString()
+              dateObj.toDateString()
                 ? "active"
                 : ""
             } ${new Date(year, month, index + 1) < today ? "disabled" : ""}`}

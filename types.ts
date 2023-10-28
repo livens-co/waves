@@ -4,7 +4,7 @@ export interface Booking {
   lastName: string;
   email: string;
   phone: string;
-  date: Date;
+  date: string;
   destination: string;
   numberOfPeople: number;
   userNotes: string;

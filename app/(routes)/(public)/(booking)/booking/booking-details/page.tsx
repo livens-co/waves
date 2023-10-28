@@ -32,6 +32,9 @@ const PersonalInfoPage = () => {
     userNotes,
   } = useGlobalContext();
 
+  const parsedDate = parseISO(date); // Parse the date string into a Date object
+
+
   const handleCreateContactMe = async () => {
     try {
       setLoading(true);
@@ -89,7 +92,9 @@ const PersonalInfoPage = () => {
     window.location = response.data.url;
   };
 
-  const formattedDate = format(date, "cccc, dd.MM.yyyy.");
+  // const formattedDate = format(date, "cccc, dd.MM.yyyy.");
+  // Format the parsedDate as a string for displaying in the component
+  const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
 
   return (
     <div className="personalInfoPage">

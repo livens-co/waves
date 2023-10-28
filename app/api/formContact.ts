@@ -3,7 +3,7 @@ import axios from "axios";
 interface BookingData {
   destination: string;
   numberOfPeople: number;
-  date: Date;
+  date: string;
   firstName: string;
   lastName: string;
   email: string;

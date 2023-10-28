@@ -7,7 +7,7 @@ interface EmailData {
   email: string;
   phone: string;
   destination: string;
-  date: Date;
+  date: string;
   numberOfPeople: number;
   userNotes: string;
   emailType: string;
