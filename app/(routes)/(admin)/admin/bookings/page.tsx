@@ -19,6 +19,7 @@ const BookingsPage = async () => {
     firstName: item.firstName,
     lastName: item.lastName,
     date: format(item.date, "cccc, dd.MM.yyyy."),
+    // date: item.date,
     destination: item.destination,
     size: item.numberOfPeople,
     paid: item.paid ? "Yes" : "No",

@@ -35,7 +35,7 @@ interface ContextProps {
 const GlobalContext = createContext<ContextProps | undefined>(undefined);
 
 export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
-  const [destination, setDestination] = useState<string>('');
+  const [destination, setDestination] = useState<string>("");
   const [date, setDate] = useState<Date>(() => {
     const today = new Date();
     const tomorrow = new Date(today);
@@ -67,8 +67,6 @@ export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
     userNotes,
     setUserNotes,
   };
-
- 
 
   return (
     <GlobalContext.Provider value={contextValue}>
