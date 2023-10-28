@@ -3,7 +3,6 @@ import "./style.scss";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { format, parseISO } from "date-fns";
-import { parse } from "path";
 
 interface BookingDetailsPageProps {
   params: {

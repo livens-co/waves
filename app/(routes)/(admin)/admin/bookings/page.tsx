@@ -13,13 +13,16 @@ const BookingsPage = async () => {
     },
   });
 
+
+
   const formattedBookings: BookingColumn[] = bookings.map((item) => ({
     id: item.id,
     email: item.email,
     firstName: item.firstName,
     lastName: item.lastName,
     date: format(item.date, "cccc, dd.MM.yyyy."),
-    // date: item.date,
+    // date: item.date.toLocaleDateString('en-DE', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' }),
+    // date: item.date.toDateString(),
     destination: item.destination,
     size: item.numberOfPeople,
     paid: item.paid ? "Yes" : "No",
