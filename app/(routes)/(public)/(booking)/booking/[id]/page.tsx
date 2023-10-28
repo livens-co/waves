@@ -53,10 +53,10 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
               <span>Destination: </span>
               {booking.destination}
             </p>
-            <p>
+            {/* <p>
               <span>Date: </span>
               {formattedDate}
-            </p>
+            </p> */}
             <p>
               <span>Group size: </span>
               {booking.numberOfPeople}
