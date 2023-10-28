@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     const parsedDate = parseISO(date);
 
     // Format the date as needed
-    const formattedDate = format(parsedDate, "ccc, dd.MM.yyyy.");
+    const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
 
     let reactElement;
 
@@ -77,9 +77,9 @@ export async function POST(req: Request) {
 
 function getEmailSubject(emailType: string): string {
   if (emailType === "contact") {
-    return "Contact Confirmation Email";
+    return "Booking Request";
   } else if (emailType === "stripe") {
-    return "Payment Confirmation Email";
+    return "Booking Confirmation";
   }
   throw new Error("Invalid emailType");
 }
