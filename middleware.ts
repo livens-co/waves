@@ -10,9 +10,17 @@ import { authMiddleware } from "@clerk/nextjs";
 // };
 
 export default authMiddleware({
-  // "/" will be accessible to all users
 
-  publicRoutes: ["/", "/booking(.*)", "/tours(.*)", '/api/:path*', '/fleet-and-crew', '/canceled', '/success', '/terms-and-conditions'],
+  publicRoutes: [
+    "/",
+    "/booking(.*)",
+    "/tours(.*)",
+    "/api/:path*",
+    "/fleet-and-crew",
+    "/canceled",
+    "/success",
+    "/terms-and-conditions",
+  ],
 });
 
 export const config = {
