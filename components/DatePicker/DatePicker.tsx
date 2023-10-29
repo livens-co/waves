@@ -55,8 +55,6 @@ const DatePicker = () => {
     setYear(dateObj.getFullYear());
   }, [dateObj]);
 
-  console.log(dateObj);
-
   return (
     <div className="datePicker">
       <div className="header">

@@ -124,7 +124,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
     }
   };
 
-  console.log(initialData?.date);
+
 
   return (
     <>

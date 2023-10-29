@@ -68,13 +68,14 @@ export async function POST(req: Request) {
     }
 
     const data = await resend.emails.send({
-      from: "Waves&more <noreply@waves-more.com>",
+      from: "Waves&more <reservations@waves-more.com>",
       to: [email],
+      bcc: "reservations@waves-more.com",
       subject: getEmailSubject(emailType),
       react: reactElement,
     });
 
-    console.log(data);
+
 
     return NextResponse.json(data);
   } catch (error) {
