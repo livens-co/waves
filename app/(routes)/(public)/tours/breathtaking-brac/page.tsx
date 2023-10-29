@@ -11,6 +11,7 @@ const BreathtakingBrac = () => {
       <header>
         <div className="logo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -21,6 +22,7 @@ const BreathtakingBrac = () => {
 
         <div className="backgroundImage">
           <Image
+          priority
             src="/assets/breathtaking-brac/14.jpeg"
             width={1400}
             height={650}
@@ -44,6 +46,7 @@ const BreathtakingBrac = () => {
       <div className="tripImages">
         <div className="tripImage">
           <Image
+          priority
             src="/assets/breathtaking-brac/9.jpeg"
             width={400}
             height={400}
@@ -54,6 +57,7 @@ const BreathtakingBrac = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/breathtaking-brac/11.jpeg"
             width={400}
             height={400}
@@ -64,6 +68,7 @@ const BreathtakingBrac = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/breathtaking-brac/12.jpeg"
             width={400}
             height={400}
@@ -93,6 +98,7 @@ const BreathtakingBrac = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/breathtaking-brac/group/g1.png"
               width={500}
               height={500}
@@ -103,6 +109,7 @@ const BreathtakingBrac = () => {
         <div className="tripContainer">
           <div className="containerImage">
             <Image
+            priority
               src="/assets/breathtaking-brac/group/g2.png"
               width={500}
               height={500}
@@ -145,6 +152,7 @@ const BreathtakingBrac = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/breathtaking-brac/group/g3.png"
               width={500}
               height={500}

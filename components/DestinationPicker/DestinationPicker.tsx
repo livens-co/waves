@@ -56,6 +56,7 @@ const DestinationPicker: React.FC<DestinationPickerProps> = ({
             >
               <div className="destinationCardInner">
                 <Image
+                priority
                   src={location.image}
                   alt={location.name}
                   fill

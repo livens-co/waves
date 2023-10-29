@@ -27,8 +27,12 @@ const hero = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Waves&more",
-  description: "Waves & more",
+  title: "Waves & more",
+  openGraph: {
+    title: "Waves & more",
+    description:
+      "We sail. You dream. Discover Croatia where endless coastline meets millennia of rich history.",
+  },
 };
 
 export default function RootLayout({

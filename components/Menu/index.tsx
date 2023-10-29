@@ -24,7 +24,7 @@ const Menu = ({ openMenu, closeMenu }: MenuProps) => {
       }}
     >
       <div className="backgroundImage">
-        <Image src="/assets/menuBackground.webp" alt="Waves & More" fill />
+        <Image priority src="/assets/menuBackground.webp" alt="Waves & More" fill />
         <div className="overlay" />
       </div>
       <div className="logoMobile">

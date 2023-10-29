@@ -16,6 +16,7 @@ const Discover = () => {
       <div className="imageContainer">
         <div className="images">
           <Image
+          priority
             src="/assets/3img.png"
             alt="Discover"
             height={400}

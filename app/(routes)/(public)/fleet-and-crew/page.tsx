@@ -9,6 +9,7 @@ const FleetAndCrewPage = () => {
       <header>
         <div className="headerLogo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -20,6 +21,7 @@ const FleetAndCrewPage = () => {
         </div>
         <div className="headerImage">
           <Image
+          priority
             src="/assets/breathtaking-brac/14.jpeg"
             width={1400}
             height={650}
@@ -34,6 +36,7 @@ const FleetAndCrewPage = () => {
       <div className="fleetSection">
         <div className="fleetImage">
           <Image
+          priority
             src="/assets/fleet1.jpeg"
             alt="Boat"
             width={800}
@@ -69,6 +72,7 @@ const FleetAndCrewPage = () => {
         </div>
         <div className="fleetImage">
           <Image
+          priority
             src="/assets/fleet2.jpeg"
             alt="Boat"
             width={800}
@@ -81,6 +85,7 @@ const FleetAndCrewPage = () => {
       <div className="crewSection">
         <div className="crewImage">
           <Image
+          priority
             src="/assets/ante.png"
             alt="Ante Crew"
             height={750}

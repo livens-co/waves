@@ -97,6 +97,7 @@ const PersonalInfoPage = () => {
     <div className="personalInfoPage">
       <Link href="/" className="logo">
         <Image
+        priority
           src="/assets/logo.webp"
           alt="Waves & more"
           width={200}

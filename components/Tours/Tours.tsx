@@ -20,7 +20,7 @@ const Tours = () => {
               className="tourContainer"
               key={tour.id}
             >
-              <Image src={tour.image} alt={tour.name} width={200} height={75} />
+              <Image priority src={tour.image} alt={tour.name} width={200} height={75} />
               <div className="imageOverlay" />
               <p>{tour.name}</p>
             </Link>
@@ -30,6 +30,7 @@ const Tours = () => {
       
       <div className="backgroundImage">
         <Image
+        priority
           src="/assets/wavesBoat.webp"
           alt="Waves & More"
           width={200}

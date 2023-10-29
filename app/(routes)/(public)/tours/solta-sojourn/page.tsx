@@ -11,6 +11,7 @@ const SoltaSojourn = () => {
       <header>
         <div className="logo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -21,6 +22,7 @@ const SoltaSojourn = () => {
 
         <div className="backgroundImage">
           <Image
+          priority
             src="/assets/solta-sojourn/3.jpeg"
             width={1400}
             height={650}
@@ -44,6 +46,7 @@ const SoltaSojourn = () => {
       <div className="tripImages">
         <div className="tripImage">
           <Image
+          priority
             src="/assets/solta-sojourn/1.jpeg"
             width={400}
             height={400}
@@ -54,6 +57,7 @@ const SoltaSojourn = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/solta-sojourn/2.jpeg"
             width={400}
             height={400}
@@ -64,6 +68,7 @@ const SoltaSojourn = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/solta-sojourn/4.jpeg"
             width={400}
             height={400}
@@ -93,6 +98,7 @@ const SoltaSojourn = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/solta-sojourn/group/g1.png"
               width={500}
               height={500}
@@ -103,6 +109,7 @@ const SoltaSojourn = () => {
         <div className="tripContainer">
         <div className="containerImage">
             <Image
+            priority
               src="/assets/solta-sojourn/group/g2.png"
               width={500}
               height={500}
@@ -141,6 +148,7 @@ const SoltaSojourn = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/solta-sojourn/group/g3.png"
               width={500}
               height={500}

@@ -23,6 +23,7 @@ const BookingPage = () => {
     <div className="bookingPage">
       <Link href='/' className="logo">
         <Image
+        priority
           src="/assets/logo.webp"
           alt="Waves & more"
           width={200}

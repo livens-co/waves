@@ -11,6 +11,7 @@ const CaptivatingKorcula = () => {
       <header>
         <div className="logo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -21,6 +22,7 @@ const CaptivatingKorcula = () => {
 
         <div className="backgroundImage">
           <Image
+          priority
             src="/assets/captivating-korcula/4.jpeg"
             width={1400}
             height={650}
@@ -44,6 +46,7 @@ const CaptivatingKorcula = () => {
       <div className="tripImages">
         <div className="tripImage">
           <Image
+          priority
             src="/assets/captivating-korcula/2.jpeg"
             width={400}
             height={400}
@@ -54,6 +57,7 @@ const CaptivatingKorcula = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/captivating-korcula/3.jpeg"
             width={400}
             height={400}
@@ -64,6 +68,7 @@ const CaptivatingKorcula = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/captivating-korcula/1.jpeg"
             width={400}
             height={400}
@@ -92,6 +97,7 @@ const CaptivatingKorcula = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/captivating-korcula/group/g1.png"
               width={500}
               height={500}
@@ -102,6 +108,7 @@ const CaptivatingKorcula = () => {
         <div className="tripContainer">
         <div className="containerImage">
             <Image
+            priority
               src="/assets/captivating-korcula/group/g2.png"
               width={500}
               height={500}
@@ -141,6 +148,7 @@ const CaptivatingKorcula = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/captivating-korcula/group/g3.png"
               width={500}
               height={500}

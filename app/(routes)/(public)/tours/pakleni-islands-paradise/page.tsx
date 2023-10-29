@@ -11,6 +11,7 @@ const PakleniIslandsParadise = () => {
       <header>
         <div className="logo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -21,6 +22,7 @@ const PakleniIslandsParadise = () => {
 
         <div className="backgroundImage">
           <Image
+          priority
             src="/assets/pakleni-islands-paradise/2.jpeg"
             width={1400}
             height={650}
@@ -44,6 +46,7 @@ const PakleniIslandsParadise = () => {
       <div className="tripImages">
         <div className="tripImage">
           <Image
+          priority
             src="/assets/pakleni-islands-paradise/1.jpeg"
             width={400}
             height={400}
@@ -54,6 +57,7 @@ const PakleniIslandsParadise = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/pakleni-islands-paradise/3.jpeg"
             width={400}
             height={400}
@@ -64,6 +68,7 @@ const PakleniIslandsParadise = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/pakleni-islands-paradise/4.jpeg"
             width={400}
             height={400}
@@ -92,6 +97,7 @@ const PakleniIslandsParadise = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/pakleni-islands-paradise/group/g1.png"
               width={500}
               height={500}
@@ -102,6 +108,7 @@ const PakleniIslandsParadise = () => {
         <div className="tripContainer">
         <div className="containerImage">
             <Image
+            priority
               src="/assets/pakleni-islands-paradise/group/g2.png"
               width={500}
               height={500}
@@ -144,6 +151,7 @@ const PakleniIslandsParadise = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/pakleni-islands-paradise/group/g3.png"
               width={500}
               height={500}

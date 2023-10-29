@@ -39,6 +39,7 @@ const Destinations = () => {
               >
                 <div className="destinationCardInner">
                   <Image
+                  priority
                     src={location.image}
                     alt={location.name}
                     fill

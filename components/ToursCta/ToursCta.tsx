@@ -6,7 +6,7 @@ const ToursCta = () => {
   return (
     <div className="toursCta">
       <div className="imagesContainer">
-        <Image src="/assets/cta.png" alt="" height={400} width={400} />
+        <Image priority src="/assets/cta.png" alt="" height={400} width={400} />
         <div className="imageOverlay" />
       </div>
 

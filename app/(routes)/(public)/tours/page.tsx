@@ -31,6 +31,7 @@ const ToursPage = () => {
                 <div className="rowImage">
                   <Link href={`/tours/${tour.href}`} className="tourContainer">
                     <Image
+                    priority
                       src={tour.image}
                       alt={tour.name}
                       width={256}

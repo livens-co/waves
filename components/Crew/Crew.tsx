@@ -6,6 +6,7 @@ const Crew = () => {
     <div className="crew">
       <div className="image">
         <Image
+        priority
           src="/assets/ante.png"
           alt="Ante Crew"
           height={750}

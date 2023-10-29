@@ -11,6 +11,7 @@ const VibrantVis = () => {
       <header>
         <div className="logo">
           <Image
+          priority
             src="/assets/logo.webp"
             alt="Waves & more"
             width={200}
@@ -21,6 +22,7 @@ const VibrantVis = () => {
 
         <div className="backgroundImage">
           <Image
+          priority
             src="/assets/vibrant-vis/4.jpeg"
             width={1400}
             height={650}
@@ -44,6 +46,7 @@ const VibrantVis = () => {
       <div className="tripImages">
         <div className="tripImage">
           <Image
+          priority
             src="/assets/vibrant-vis/1.jpeg"
             width={400}
             height={400}
@@ -54,6 +57,7 @@ const VibrantVis = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/vibrant-vis/2.jpeg"
             width={400}
             height={400}
@@ -64,6 +68,7 @@ const VibrantVis = () => {
         </div>
         <div className="tripImage">
           <Image
+          priority
             src="/assets/vibrant-vis/3.jpeg"
             width={400}
             height={400}
@@ -90,6 +95,7 @@ const VibrantVis = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/vibrant-vis/group/g1.png"
               width={500}
               height={500}
@@ -100,6 +106,7 @@ const VibrantVis = () => {
         <div className="tripContainer">
         <div className="containerImage">
             <Image
+            priority
               src="/assets/vibrant-vis/group/g2.png"
               width={500}
               height={500}
@@ -142,6 +149,7 @@ const VibrantVis = () => {
           </div>
           <div className="containerImage">
             <Image
+            priority
               src="/assets/vibrant-vis/group/g3.png"
               width={500}
               height={500}
