@@ -67,7 +67,7 @@ const ToursPage = () => {
             </p>
           </div>
           <div className="customTourCta">
-            <a href="mailto:hello@waves-more.com" className="buttonInvert">
+            <a href="mailto:reservations@waves-more.com" className="buttonInvert">
               Get in Touch
             </a>
           </div>

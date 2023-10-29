@@ -24,7 +24,7 @@ const Footer = () => {
             <LocalPhoneOutlinedIcon />
             Contact us
           </h3>
-          <a href="mailto:reservations@waves.hr">reservations@waves.hr</a>
+          <a href="mailto:reservations@waves-more.com">reservations@waves-more.com</a>
           <a href="tel:+385953700141">+385 95 3700 141</a>
         </div>
         <div className="column">
