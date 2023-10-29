@@ -1,6 +1,248 @@
 .fleetPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+  //   justify-content: center;
+
+  header {
+    width: 100%;
+    height: 30rem;
+    position: relative;
+
+    .headerImage {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .headerOverlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgb(7, 20, 36);
+      background: -moz-linear-gradient(
+        180deg,
+        rgba(7, 20, 36, 0.3239889705882353) 0%,
+        rgba(7, 20, 36, 1) 84%
+      );
+      background: -webkit-linear-gradient(
+        180deg,
+        rgba(7, 20, 36, 0.3239889705882353) 0%,
+        rgba(7, 20, 36, 1) 84%
+      );
+      background: linear-gradient(
+        180deg,
+        rgba(7, 20, 36, 0.3239889705882353) 0%,
+        rgba(7, 20, 36, 1) 84%
+      );
+    }
+
+    .headerLogo {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+    }
+
+    .headerText {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      z-index: 2;
+
+      h1 {
+        color: var(--primaryColor);
+        font-weight: 400;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .fleetSection {
+    display: flex;
+    padding: 2rem 5%;
+    height: 25rem;
+
+    .fleetImage {
+      flex: 1;
+      border-radius: 1rem;
+      overflow: hidden;
+      height: 20rem;
+
+      img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .fleetText {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .crewSection {
     width: 100%;
     display: flex;
+    padding: 2rem 5%;
+
+    .crewImage {
+      //   flex: 2;
+      height: 25rem;
+      width: 25rem;
+
+      img {
+        height: 25rem;
+        width: auto;
+      }
+    }
+
+    .crewText {
+      flex: 5;
+      display: flex;
+      align-items: center;
+      //   margin: 2rem;
+      justify-content: center;
+
+      p {
+        // width: 80%;
+        font-size: 1.15rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .fleetTours {
+    display: flex;
     flex-direction: column;
-    padding: 4rem 5% 6rem;
+    align-items: center;
+    gap: 2rem;
+
+    h1 {
+      font-size: 1.75rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+  }
+
+  .fleetCta {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .fleetPage {
+    .fleetSection {
+      flex-direction: column;
+      height: fit-content;
+      gap: 2rem;
+
+      .fleetImage {
+        width: 100%;
+        flex: unset;
+        height: 20rem;
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      .fleetText {
+        flex: unset;
+        padding: 1rem;
+      }
+
+      &:nth-child(3) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .crewSection {
+      flex-direction: column;
+      height: fit-content;
+
+      .crewImage {
+        height: 20rem;
+        width: 20rem;
+        margin: 0 auto;
+
+        img {
+          height: 20rem;
+        }
+      }
+
+      .crewText {
+        flex: unset;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .fleetPage {
+    .fleetSection {
+      .fleetImage {
+        height: 16rem;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fleetPage {
+    gap: 0;
+
+    .fleetSection {
+      .fleetImage {
+        height: 13rem;
+        width: 90%;
+      }
+
+      .fleetText {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    .crewSection {
+      .crewText {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .fleetTours{
+        h1{
+            font-size: 1.5rem;
+        }
+    }
+  }
 }

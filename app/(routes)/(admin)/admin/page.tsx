@@ -7,7 +7,7 @@ const DashboardPage = async () => {
     return <div>No User found</div>;
   }
 
-  return <div>Admin</div>;
+  return <div>Home</div>;
 };
 
 export default DashboardPage;

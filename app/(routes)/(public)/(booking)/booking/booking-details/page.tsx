@@ -32,8 +32,7 @@ const PersonalInfoPage = () => {
     userNotes,
   } = useGlobalContext();
 
-  const parsedDate = parseISO(date); // Parse the date string into a Date object
-
+  const parsedDate = parseISO(date);
 
   const handleCreateContactMe = async () => {
     try {
@@ -92,13 +91,11 @@ const PersonalInfoPage = () => {
     window.location = response.data.url;
   };
 
-  // const formattedDate = format(date, "cccc, dd.MM.yyyy.");
-  // Format the parsedDate as a string for displaying in the component
   const formattedDate = format(parsedDate, "cccc, dd.MM.yyyy.");
 
   return (
     <div className="personalInfoPage">
-      <Link href='/' className="logo">
+      <Link href="/" className="logo">
         <Image
           src="/assets/logo.webp"
           alt="Waves & more"

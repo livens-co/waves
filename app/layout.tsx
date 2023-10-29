@@ -3,8 +3,7 @@ import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import { ToasterProvider } from '@/providers/toast-provider';
-
+import { ToasterProvider } from "@/providers/toast-provider";
 
 import "./globals.css";
 
@@ -41,12 +40,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={hero.className}>
         <GlobalContextProvider>
-          {/* <div className="mainLayout"> */}
-            {/* <Navbar /> */}
-            <ToasterProvider />
-            {children}
-            {/* <Footer /> */}
-          {/* </div> */}
+          <ToasterProvider />
+          {children}
         </GlobalContextProvider>
       </body>
     </html>

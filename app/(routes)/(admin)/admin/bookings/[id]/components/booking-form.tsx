@@ -40,7 +40,6 @@ const formSchema = z.object({
   lastName: z.string().min(1),
   email: z.string().min(1),
   phone: z.string().min(1),
-  // date: z.coerce.date(),
   date: z.string(),
   destination: z.string().min(1),
   numberOfPeople: z.coerce.number().min(1),
@@ -76,16 +75,13 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
           price: parseFloat(String(initialData?.price)) || undefined,
           userNotes: initialData?.userNotes || undefined,
           adminNotes: initialData?.adminNotes || undefined,
-          // date: initialData?.date ? new Date(initialData.date) : new Date(),
-          // date: initialData?.date ? parseISO(initialData.date) : new Date(),
         }
       : {
           firstName: "",
           lastName: "",
           email: "",
           phone: "",
-          // date: new Date(),
-          date: new Date().toISOString(), // Convert to a string
+          date: new Date().toISOString(),
           destination: "",
           numberOfPeople: 1,
           paid: false,
@@ -96,8 +92,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
     try {
       setLoading(true);
 
-      // Convert the date back to a string before submitting
-      // data.date = data.date.toISOString();
       data.date = parseISO(data.date).toISOString();
 
       if (initialData) {
@@ -238,9 +232,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                             )}
                           >
                             {field.value ? (
-                              format(parseISO(field.value), "ccc, dd.MM.yyyy.") // Parse the string to Date here
+                              format(parseISO(field.value), "ccc, dd.MM.yyyy.")
                             ) : (
-                              // format(field.value, "ccc, dd.MM.yyyy.")
                               <span>Pick a date</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -250,14 +243,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialData }) => {
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
                           mode="single"
-                          // selected={field.value}
-                          // onSelect={field.onChange}
                           selected={
                             field.value ? parseISO(field.value) : undefined
-                          } // Pass `undefined` instead of `null`
+                          }
                           onSelect={(date) =>
                             field.onChange(date ? date.toISOString() : "")
-                          } // Convert the selected date back to a string or empty string
+                          }
                           disabled={(date) => date < new Date()}
                           initialFocus
                         />

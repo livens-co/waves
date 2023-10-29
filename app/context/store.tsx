@@ -36,18 +36,12 @@ const GlobalContext = createContext<ContextProps | undefined>(undefined);
 
 export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
   const [destination, setDestination] = useState<string>("");
-  // const [date, setDate] = useState<string>(() => {
-  //   const today = new Date();
-  //   const tomorrow = new Date(today);
-  //   tomorrow.setDate(today.getDate() + 1);
-  //   return tomorrow;
-  // });
+  
   const [date, setDate] = useState<string>(() => {
-    // Initialize date as a string with the desired format
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
-    const formattedDate = tomorrow.toISOString();  // Convert to ISO 8601 string
+    const formattedDate = tomorrow.toISOString(); 
     return formattedDate;
   });
   const [numberOfPeople, setNumberOfPeople] = useState<number>(1);
@@ -56,8 +50,6 @@ export const GlobalContextProvider: React.FC<Props> = ({ children }) => {
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [userNotes, setUserNotes] = useState<string>("");
-
-  console.log(date)
 
   const contextValue = {
     destination,
