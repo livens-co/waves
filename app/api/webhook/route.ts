@@ -30,13 +30,13 @@ export async function POST(req: Request) {
       },
       data: {
         paid: true,
-      }, 
+      },
     });
 
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/send`, {
         email: booking.email,
-        firstName: booking.firstName, 
+        firstName: booking.firstName,
         lastName: booking.lastName,
         phone: booking.phone,
         destination: booking.destination,
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         numberOfPeople: booking.numberOfPeople,
         userNotes: booking.userNotes,
         bookingId: booking.id,
-        emailType: "stripe", 
+        emailType: "stripe",
       });
     } catch (error) {
       console.error("Email sending failed:", error);
@@ -52,7 +52,14 @@ export async function POST(req: Request) {
     }
 
     return new NextResponse("Email sent successfully", { status: 200 });
+  } else if (event.type === "checkout.session.async_payment_failed") {
+    const booking = await prismadb.booking.delete({
+      where: {
+        id: session?.metadata?.bookingId,
+      },
+    });
+    return new NextResponse("Booking canceled due to payment failure", {
+      status: 200,
+    });
   }
-
-  return new NextResponse(null, { status: 200 });
 }
