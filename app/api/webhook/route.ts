@@ -52,7 +52,9 @@ export async function POST(req: Request) {
     }
 
     return new NextResponse("Email sent successfully", { status: 200 });
-  } else if (event.type === "checkout.session.async_payment_failed") {
+  }
+
+  if (event.type === "checkout.session.async_payment_failed") {
     const booking = await prismadb.booking.delete({
       where: {
         id: session?.metadata?.bookingId,
