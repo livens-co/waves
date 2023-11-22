@@ -1,7 +1,6 @@
 import getBooking from "@/actions/get-booking";
 import "./style.scss";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import { parseISO } from "date-fns";
 import { utcToZonedTime, format as tzFormat } from "date-fns-tz";
 
@@ -19,7 +18,7 @@ const BookingDetailsPage: React.FC<BookingDetailsPageProps> = async ({
   const booking = await getBooking(params.id);
 
   if (!booking) {
-    notFound();
+    return <p>Booking not found</p>;
   }
 
   const isoDate = booking.date;
